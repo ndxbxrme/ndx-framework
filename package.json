@@ -1,6 +1,6 @@
 {
   "name": "ndx-framework",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ndx-framework",
   "main": "build/app.js",
   "bin": "build/app.js",

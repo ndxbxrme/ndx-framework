@@ -21,6 +21,7 @@
   - [commonly used environment variables](#commonly-used-environment-variables)
   - [ssl](#ssl)
   - [modules](#modules)
+  - [the ndx object](#the-ndx-object)
   - [currently available modules](#currently-available-modules)
   - [api routes and users](#api-routes-and-users)
   - [authenticating api routes](#authenticating-api-routes)
@@ -168,6 +169,29 @@ client modules - install with `bower install --save module-name`
 |[ndx-auth](https://github.com/ndxbxrme/ndx-auth-client)|clientside role based authentication, for use in conjunction with [ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)|  
 if you make any cool modules let us know and we'll add them to the list
 
+### the ndx object
+
+The `ndx` object gets passed to each controller and service
+
+#### Properties
+
+- `ndx.app` - The express app
+- `ndx.server` - The express server
+- `ndx.database` - The database
+- `ndx.settings` - Server settings
+- `ndx.host` - Server host
+- `ndx.port` - Server port
+
+#### Methods
+
+- `ndx.generateHash(string) -> hashed string`
+- `ndx.validPassword(password, hashedPassword) -> bool`
+- `ndx.authenticate()` middleware to authenticate a route, see [ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles) for a more robust implementation
+- `ndx.postAuthenticate(req, res, next)` used internally
+- `ndx.generateToken(string userId, string ip) -> new user token`
+- `ndx.setAuthCookie(req, res)` used internally
+
+other modules can add extra properties and methods to the `ndx` object, eg `ndx-passport` which adds `ndx.passport` for the other passport modules to use.
 
 ### api routes and users
 all routes that start with `api/` get the currently logged in user as `req.user`, eg  
