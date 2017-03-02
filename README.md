@@ -4,6 +4,7 @@
 - ndx-framework uses [coffeescript](http://coffeescript.org/), [pug/jade](https://pugjs.org/api/getting-started.html) and [stylus](http://stylus-lang.com/) to keep your codebase tight and legible
 - npm and bower support
 - fully platform independent
+- promotes modularity
 - [ndx-framework modules](#modules) are easy to author, especially if you are already acquainted with [express](http://expressjs.com/) servers
 - there are already [many](#available) ndx-framework modules to make common tasks simple, eg user management/user roles/sockets/server syncing
 - easy to integrate server profiler
@@ -13,7 +14,7 @@
 - any other database can easily be plugged in, see [ndx-database-engine](https://github.com/ndxbxrme/ndx-database-engine)
 
 ## getting started
-requires node and npm so make sure you have those installed by typing `node -v` and `npm -v`
+ndx-framework requires node and npm so make sure you have them installed by typing `node -v` and `npm -v`
 * install and initialize ndx-framework
 ```bash
     npm install -g ndx-framework
