@@ -171,18 +171,18 @@ if you make any cool modules let us know and we'll add them to the list
 
 ### the ndx object
 
-The `ndx` object gets passed to each controller and service
+the `ndx` object gets passed to each controller and service
 
-#### Properties
+#### properties
 
-- `ndx.app` - The express app
-- `ndx.server` - The express server
-- `ndx.database` - The database
-- `ndx.settings` - Server settings
-- `ndx.host` - Server host
-- `ndx.port` - Server port
+- `ndx.app` - the express app
+- `ndx.server` - the express server
+- `ndx.database` - the database
+- `ndx.settings` - server settings
+- `ndx.host` - server host
+- `ndx.port` - server port
 
-#### Methods
+#### methods
 
 - `ndx.generateHash(string) -> hashed string`
 - `ndx.validPassword(password, hashedPassword) -> bool`
