@@ -27,7 +27,7 @@
   - [connect to the app](#connect-to-the-app)
   - [app monitor](#app-monitor)
   - [running your app in production](#running-your-app-in-production)
-  - [the difference between .use() and .controller](#the-difference-between-use-and-controller)
+  - [the difference between .use() and .controller()](#the-difference-between-use-and-controller)
   - [error handling](#error-handling)
   - [anatomy of an ndx-framework web app](#anatomy-of-an-ndx-framework-web-app)
   - [generated folders](#generated-folders)
