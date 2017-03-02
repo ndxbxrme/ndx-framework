@@ -11,6 +11,7 @@
 - designed to run with a small footprint in constrained environments eg heroku
 - built-in lightning fast in-memory sql/nosql/nodb [ndxdb](https://github.com/ndxbxrme/ndxdb) that treats javascript objects as first-class citizens and can persist data to s3 in a cost effective/performant manner 
 - any other database can easily be plugged in, see [ndx-database-engine](https://github.com/ndxbxrme/ndx-database-engine)
+
 ## getting started
 requires node and npm so make sure you have those installed by typing `node -v` and `npm -v`
 * install and initialize ndx-framework
@@ -23,6 +24,7 @@ requires node and npm so make sure you have those installed by typing `node -v` 
     ndx-framework --create appName
 ```
 * navigate to`http://localhost:2323`
+
 ### grunt
 ndx-framework uses [grunt](https://gruntjs.com/) to run and livereload your app while in development  
 from within the app folder you can start your app by typing
@@ -42,8 +44,11 @@ from within the app folder you can run [generator-ndx](https://github.com/ndxbxr
 ### environment variables
 we encourage the use of environment variables to store sensitive settings (AWS key etc)  
 other settings can be passed into the ndx-server `.config()` function in `src/server/app.coffee`
+
 #### commonly used environment variables
+
 #### [`ndx-server`](https://github.com/ndxbxrme/ndx-server)
+
 | environment | config   | required  | description                          |
 |-------------|----------|-----------|--------------------------------------|
 |PORT         |port      |Yes        |the port your app will run on         |
@@ -54,9 +59,11 @@ other settings can be passed into the ndx-server `.config()` function in `src/se
 |USER_TABLE|userTable|No|database table name to store user data, defaults to `users`|
 | - |dbEngine|No|[database engine](https://github.com/ndxbxrme/ndx-database-engine) to use, defaults to `require('ndxdb')`|
 | - |publicUser|No|an object describing which user fields get sent to the client, eg `{_id:true,local:{email:true},roles:true}`|
+
 #### [`ndxdb`](https://github.com/ndxbxrme/ndxdb)
+
 |Environment|Config|Required|Description|
-|-|-|-|-|
+|-----------|------|--------|-----------|
 |-|tables|Yes|an array of database table names eg `['users','houses','friends']`
 |LOCAL_STORAGE|localStorage|No|local folder for data storage, eg `data` or `../data`|
 |AWS_BUCKET|awsBucket|No|AWS bucket name for S3 data persistence|
@@ -152,7 +159,7 @@ require 'ndx-server'
 <a name="available"></a>
 server modules - install with `npm install --save module-name`
 |name|description|
-|-|-|
+|----|-----------|
 |[ndx-auth](https://github.com/ndxbxrme/ndx-auth)| oauth2 authentication routes |
 |[ndx-connect](https://github.com/ndxbxrme/ndx-connect)| lets authenticated users connect to the database to perform arbitrary operations |
 |[ndx-cors](https://github.com/ndxbxrme/ndx-cors)| adds cors support to `api/` routes |
@@ -174,7 +181,7 @@ server modules - install with `npm install --save module-name`
 |[ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)| authenticate `api/` routes using roles |
 client modules - install with `bower install --save module-name`
 |name|description|
-|-|-|
+|----|-----------|
 |ndx-auth|clientside role based authentication, for use in conjunction with [ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)|
 if you make any cool modules let us know and we'll add them to the list
 
@@ -256,8 +263,8 @@ module.exports = (ndx) ->
         message: 'not authorized'
 ```
 ### anatomy of an ndx-framework web app
-| route | description|
-|-------------|----------------|
+| route         | description|
+|---------------|------------|
 | `src/client/`| the angular app|
 | `src/client/directives/`| a place to keep angular directives|
 | `src/client/filters/`| angular filters |
@@ -274,8 +281,8 @@ module.exports = (ndx) ->
 | `public/`| statically served resources, put your images/fonts/favicons in here, eg `img(src='public/images/logo.png')` |
 ### generated folders 
 You should generally avoid messing with these folders 
-| route | description |
-|------|-|
+| route     | description |
+|-----------|-------------|
 | `bower/`| bower components |
 | `build/`| the clientside app, served only in dev mode `NODE_ENV=dev` |
 | `dist/`| the built clientside app, served in production mode `NODE_ENV=production` |
