@@ -40,7 +40,7 @@ ndx-framework requires node and npm so make sure you have them installed by typi
     npm install -g ndx-framework
     ndx-framework --init
 ```
-* create an app
+* create an app  
 ```bash
     ndx-framework --create appName
 ```
@@ -48,11 +48,11 @@ ndx-framework requires node and npm so make sure you have them installed by typi
 
 ### grunt
 ndx-framework uses [grunt](https://gruntjs.com/) to run and livereload your app while in development  
-from within the app folder you can start your app by typing
+from within the app folder you can start your app by typing  
 ```bash
     grunt
 ```
-to build your app for production
+to build your app for production  
 ```bash
     grunt build
 ```
@@ -98,7 +98,7 @@ set the `SSL_PORT=[portNo]` environment variable and drop `key.pem` and `cert.pe
 ### modules
 <a name="modules"></a>
 ndx-framework is built around modularity.  
-server modules are simply a function that receives the `ndx` object and adds functionality to it
+server modules are simply a function that receives the `ndx` object and adds functionality to it  
 `src/server/app.coffee`
 ```coffeescript
 require 'ndx-server'
@@ -109,7 +109,7 @@ require 'ndx-server'
     res.end 'hi from ndx!'
 .start()
 ```
-as your app grows you'll find it easier to keep the code for your modules seperate
+as your app grows you'll find it easier to keep the code for your modules seperate  
 `src/server/app.coffee`
 ```coffeescript
 require 'ndx-server'
@@ -125,7 +125,7 @@ module.exports (ndx) ->
     res.end 'hi from ndx!'
 ```
 you can also publish your modules to npm  
-modules installed this way don't neeed requiring 
+modules installed this way don't neeed requiring  
 `src/server/app.coffee`
 ```coffeescript
 require 'ndx-server'
