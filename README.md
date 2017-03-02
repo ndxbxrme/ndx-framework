@@ -170,7 +170,7 @@ if you make any cool modules let us know and we'll add them to the list
 
 
 ### api routes and users
-all routes that start with `api/` get the currently logged in user as `req.user`, eg
+all routes that start with `api/` get the currently logged in user as `req.user`, eg  
 `src/server/app.coffee`
 ```coffeescript
 require 'ndx-server'
@@ -186,7 +186,7 @@ require 'ndx-server'
 .start()
 ```
 ### authenticating api routes
-without roles
+without roles  
 `src/server/app.coffee`
 ```coffeescript
 require 'ndx-server'
@@ -198,7 +198,7 @@ require 'ndx-server'
     res.end 'you\'re cool'
 .start()
 ```
-with roles, using [ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)
+with roles, using [ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)  
 `src/server/app.coffee`
 ```coffeescript
 require 'ndx-server'
@@ -213,7 +213,7 @@ require 'ndx-server'
 ```
 
 ### connect to the app
-add these modules to 
+add these modules to  
 `src/server/app.coffee`
 ```coffeescript
 require 'ndx-server'
@@ -226,7 +226,7 @@ require 'ndx-server'
 .use 'ndx-connect'
 .start()
 ```
-then type `ndx-framework` to open the interactive app connector
+then type `ndx-framework` to open the interactive app connector  
 ```bash
 > ndx-framework
 ndx framework v0.0.1
@@ -246,7 +246,7 @@ Sun Jan 29 2017 12:38:00 PM
 Sun Jan 29 2017 02:38:00 PM
 ```
 ### app monitor
-you can use [ndx-appmonitor](https://github.com/ndxbxrme/ndx-appmonitor) to monitor the status of your app in realtime
+you can use [ndx-appmonitor](https://github.com/ndxbxrme/ndx-appmonitor) to monitor the status of your app in realtime  
 `src/server/app.coffee`
 ```coffeescript
 require 'ndx-server'
@@ -263,19 +263,19 @@ to monitor local apps git clone [ndx-appmonitor](https://github.com/ndxbxrme/ndx
 for live apps you can use [this pen](http://codepen.io/ndxbxrme/full/evNyGV/)
 
 ### running your app in production
-build your app with 
+build your app with  
 `grunt build`
 remember to set `NODE_ENV=production`
-then run the app using
-`node --expose-gc server/app.js`
+then run the app using  
+`node --expose-gc server/app.js`  
 the `--expose-gc` flag is optional - if you include it ndx-server will do some extra garbage collection which can help keep memory use down (especially useful if you are working with third party packages that might be a bit leaky)
 ### the difference between .use() and .controller()
-the only real difference is a matter of timing, both are called on app start and both receive a reference to the `ndx` object
+the only real difference is a matter of timing, both are called on app start and both receive a reference to the `ndx` object  
 `.use` modules get loaded before `.controller` modules  
 we recommend that you use `.use` modules for services and long running operations which will usually add themselves to the `ndx` object for other modules to use down the line  
-`.controller` modules are for api routes etc
+`.controller` modules are for api routes etc  
 ### error handling
-to handle an error within an api route simply call `next()` with an error message or an object containing a status code and error message
+to handle an error within an api route simply call `next()` with an error message or an object containing a status code and error message  
 ```coffeescript
 module.exports = (ndx) ->
   ndx.app.get 'api/error', (req, res, next) ->
@@ -307,7 +307,7 @@ module.exports = (ndx) ->
 | `src/server/app.coffee`| the main app file - configures and starts ndx-server, register your modules/controllers/services in this file |
 | `public/`| statically served resources, put your images/fonts/favicons in here, eg `img(src='public/images/logo.png')` |
 ### generated folders 
-You should generally avoid messing with these folders 
+You should generally avoid messing with these folders  
 
 | route     | description |
 |-----------|-------------|
