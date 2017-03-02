@@ -73,7 +73,7 @@ other settings can be passed into the ndx-server `.config()` function in `src/se
 other modules may require their own environment variables, check that module's homepage to see what you need to set
 ### ssl
 <a name="ssl"></a>
-simply set the `SSL_PORT=[portNo]` environment variable and drop `key.pem` and `cert.pem` into the app directory
+set the `SSL_PORT=[portNo]` environment variable and drop `key.pem` and `cert.pem` into the app directory
 ### modules
 <a name="modules"></a>
 ndx-framework is built around modularity.  
