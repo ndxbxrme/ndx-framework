@@ -13,7 +13,27 @@
 - built-in lightning fast in-memory sql/nosql/nodb [ndxdb](https://github.com/ndxbxrme/ndxdb) that treats javascript objects as first-class citizens and can persist data to s3 in a cost effective/performant manner 
 - any other database can easily be plugged in, see [ndx-database-engine](https://github.com/ndxbxrme/ndx-database-engine)
 
-## getting started
+### index
+    - [getting started](#getting started)
+    - [grunt](#grunt)
+    - [yeoman](#yeoman)
+    - [environment variables](#environment variables)
+    - [commonly used environment variables](#commonly used environment variables)
+    - [ssl](#ssl)
+    - [modules](#modules)
+    - [currently available modules](#currently available modules)
+    - [api routes and users](#api routes and users)
+    - [authenticating api routes](#authenticating api routes)
+    - [connect to the app](#connect to the app)
+    - [app monitor](#app monitor)
+    - [running your app in production](#running your app in production)
+    - [the difference between .use() and .controller](#the difference between .user() and .controller())
+    - [error handling](#error handling)
+    - [anatomy of an ndx-framework web app](#anatomy of an ndx-framework web app)
+    - [generated folders](#generated folders)
+    - [coming soon](#coming soon)
+
+### getting started
 ndx-framework requires node and npm so make sure you have them installed by typing `node -v` and `npm -v`
 * install and initialize ndx-framework
 ```bash
@@ -46,7 +66,7 @@ from within the app folder you can run [generator-ndx](https://github.com/ndxbxr
 we encourage the use of environment variables to store sensitive settings (AWS key etc)  
 other settings can be passed into the ndx-server `.config()` function in `src/server/app.coffee`
 
-#### commonly used environment variables
+### commonly used environment variables
 
 #### [`ndx-server`](https://github.com/ndxbxrme/ndx-server)
 
@@ -114,6 +134,39 @@ require 'ndx-server'
 .controller 'ndx-static-routes'
 .start()
 ```
+
+### currently available modules
+<a name="available"></a>
+server modules - install with `npm install --save module-name`
+
+|name|description|
+|----|-----------|
+|[ndx-auth](https://github.com/ndxbxrme/ndx-auth)| oauth2 authentication routes |
+|[ndx-connect](https://github.com/ndxbxrme/ndx-connect)| lets authenticated users connect to the database to perform arbitrary operations |
+|[ndx-cors](https://github.com/ndxbxrme/ndx-cors)| adds cors support to `api/` routes |
+|[ndx-database-backup](https://github.com/ndxbxrme/ndx-database-backup)| schedule regular database backups |
+|[ndx-framework](https://github.com/ndxbxrme/ndx-framework)| this package |
+|[ndx-keep-awake](https://github.com/ndxbxrme/ndx-keep-awake)| creates and regularly calls an `api/` route, this is useful to stop your app going to sleep on hosts where that is a thing (heroku) |
+|[ndx-memory-check](https://github.com/ndxbxrme/ndx-memory-check)| adds an admin authenticated route to check the current memory usage |
+|[ndx-passport](https://github.com/ndxbxrme/ndx-passport)| provides basic login functions and local user login |
+|[ndx-passport-facebook](https://github.com/ndxbxrme/ndx-passport-facebook)| facebook oauth login |
+|[ndx-passport-twitter](https://github.com/ndxbxrme/ndx-passport-twitter)| twitter oauth login |
+|[ndx-passport-github](https://github.com/ndxbxrme/ndx-passport-github)| github oauth login |
+|[ndx-profiler](https://github.com/ndxbxrme/ndx-profiler)| collects server stats which can then be collected with [ndx-appmonitor](https://github.com/ndxbxrme/ndx-appmonitor) |
+|[ndx-publish](https://github.com/ndxbxrme/ndx-publish)| publishes database collections for the client to subscribe to |
+|[ndx-server](https://github.com/ndxbxrme/ndx-server)| the server |
+|[ndx-socket](https://github.com/ndxbxrme/ndx-socket)| adds websockets |
+|[ndx-static-routes](https://github.com/ndxbxrme/ndx-static-routes)| static routes to serve up the angular app `src/client` and the `public/` folder |
+|[ndx-superadmin](https://github.com/ndxbxrme/ndx-superadmin)| creates a default superadmin user then nags you to change her password |
+|[ndx-sync](https://github.com/ndxbxrme/ndx-sync)| synchronizes two or more instances of an ndx-framework app using websockets - provides horizontal scaling when using in-memory (and other) databases  |
+|[ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)| authenticate `api/` routes using roles |
+client modules - install with `bower install --save module-name`
+|name|description|
+|----|-----------|
+|ndx-auth|clientside role based authentication, for use in conjunction with [ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)|
+if you make any cool modules let us know and we'll add them to the list
+
+
 ### api routes and users
 all routes that start with `api/` get the currently logged in user as `req.user`, eg
 `src/server/app.coffee`
@@ -156,36 +209,6 @@ require 'ndx-server'
     res.end 'you\'re cool'
 .start()
 ```
-### currently available modules
-<a name="available"></a>
-server modules - install with `npm install --save module-name`
-
-|name|description|
-|----|-----------|
-|[ndx-auth](https://github.com/ndxbxrme/ndx-auth)| oauth2 authentication routes |
-|[ndx-connect](https://github.com/ndxbxrme/ndx-connect)| lets authenticated users connect to the database to perform arbitrary operations |
-|[ndx-cors](https://github.com/ndxbxrme/ndx-cors)| adds cors support to `api/` routes |
-|[ndx-database-backup](https://github.com/ndxbxrme/ndx-database-backup)| schedule regular database backups |
-|[ndx-framework](https://github.com/ndxbxrme/ndx-framework)| this package |
-|[ndx-keep-awake](https://github.com/ndxbxrme/ndx-keep-awake)| creates and regularly calls an `api/` route, this is useful to stop your app going to sleep on hosts where that is a thing (heroku) |
-|[ndx-memory-check](https://github.com/ndxbxrme/ndx-memory-check)| adds an admin authenticated route to check the current memory usage |
-|[ndx-passport](https://github.com/ndxbxrme/ndx-passport)| provides basic login functions and local user login |
-|[ndx-passport-facebook](https://github.com/ndxbxrme/ndx-passport-facebook)| facebook oauth login |
-|[ndx-passport-twitter](https://github.com/ndxbxrme/ndx-passport-twitter)| twitter oauth login |
-|[ndx-passport-github](https://github.com/ndxbxrme/ndx-passport-github)| github oauth login |
-|[ndx-profiler](https://github.com/ndxbxrme/ndx-profiler)| collects server stats which can then be collected with [ndx-appmonitor](https://github.com/ndxbxrme/ndx-appmonitor) |
-|[ndx-publish](https://github.com/ndxbxrme/ndx-publish)| publishes database collections for the client to subscribe to |
-|[ndx-server](https://github.com/ndxbxrme/ndx-server)| the server |
-|[ndx-socket](https://github.com/ndxbxrme/ndx-socket)| adds websockets |
-|[ndx-static-routes](https://github.com/ndxbxrme/ndx-static-routes)| static routes to serve up the angular app `src/client` and the `public/` folder |
-|[ndx-superadmin](https://github.com/ndxbxrme/ndx-superadmin)| creates a default superadmin user then nags you to change her password |
-|[ndx-sync](https://github.com/ndxbxrme/ndx-sync)| synchronizes two or more instances of an ndx-framework app using websockets - provides horizontal scaling when using in-memory (and other) databases  |
-|[ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)| authenticate `api/` routes using roles |
-client modules - install with `bower install --save module-name`
-|name|description|
-|----|-----------|
-|ndx-auth|clientside role based authentication, for use in conjunction with [ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)|
-if you make any cool modules let us know and we'll add them to the list
 
 ### connect to the app
 add these modules to 
