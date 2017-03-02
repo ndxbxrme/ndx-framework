@@ -264,9 +264,9 @@ for live apps you can use [this pen](http://codepen.io/ndxbxrme/full/evNyGV/)
 
 ### running your app in production
 build your app with  
-`grunt build`
-remember to set `NODE_ENV=production`
-then run the app using  
+`grunt build`  
+remember to set `NODE_ENV=production`  
+then run the app using   
 `node --expose-gc server/app.js`  
 the `--expose-gc` flag is optional - if you include it ndx-server will do some extra garbage collection which can help keep memory use down (especially useful if you are working with third party packages that might be a bit leaky)
 ### the difference between .use() and .controller()
