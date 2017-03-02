@@ -158,6 +158,7 @@ require 'ndx-server'
 ### currently available modules
 <a name="available"></a>
 server modules - install with `npm install --save module-name`
+
 |name|description|
 |----|-----------|
 |[ndx-auth](https://github.com/ndxbxrme/ndx-auth)| oauth2 authentication routes |
@@ -281,6 +282,7 @@ module.exports = (ndx) ->
 | `public/`| statically served resources, put your images/fonts/favicons in here, eg `img(src='public/images/logo.png')` |
 ### generated folders 
 You should generally avoid messing with these folders 
+
 | route     | description |
 |-----------|-------------|
 | `bower/`| bower components |
