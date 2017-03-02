@@ -17,12 +17,6 @@
 
   pack = require('../package.json');
 
-  console.log(chalk.yellow('ndx framework ') + chalk.cyan('v' + pack.version));
-
-  console.log(chalk.cyan('type ') + chalk.yellow('help') + chalk.cyan(' for a list of commands'));
-
-  console.log(chalk.cyan('hit ') + chalk.yellow('Ctrl-C') + chalk.cyan(' to exit'));
-
   getCommand = function(commandName) {
     switch (commandName) {
       case 'connect':
@@ -109,11 +103,14 @@
     ndx.spawnSync('npm', ['install', '-g', 'yo', 'generator-ndx', 'grunt-cli'], function() {
       return console.log('done');
     });
-  } else if (options.create) {
-    ndx.spawnSync('yo', ['ndx', options.create], function() {
+  } else if (options.create && options.appname) {
+    ndx.spawnSync('yo', ['ndx', options.appname], function() {
       return console.log('done');
     });
   } else {
+    console.log(chalk.yellow('ndx framework ') + chalk.cyan('v' + pack.version));
+    console.log(chalk.cyan('type ') + chalk.yellow('help') + chalk.cyan(' for a list of commands'));
+    console.log(chalk.cyan('hit ') + chalk.yellow('Ctrl-C') + chalk.cyan(' to exit'));
     main();
   }
 

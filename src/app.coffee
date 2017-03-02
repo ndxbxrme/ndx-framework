@@ -6,9 +6,6 @@ async = require 'async'
 cli = require 'cli'
 options = cli.parse()
 pack = require '../package.json'
-console.log chalk.yellow('ndx framework ') + chalk.cyan('v' + pack.version)
-console.log chalk.cyan('type ') + chalk.yellow('help') + chalk.cyan(' for a list of commands')
-console.log chalk.cyan('hit ') + chalk.yellow('Ctrl-C') + chalk.cyan(' to exit')
 
   
 getCommand = (commandName) ->
@@ -71,8 +68,11 @@ main = ->
 if options.init
   ndx.spawnSync 'npm', ['install', '-g', 'yo', 'generator-ndx', 'grunt-cli'], ->
     console.log 'done'
-else if options.create
-  ndx.spawnSync 'yo', ['ndx', options.create], ->
+else if options.create and options.appname
+  ndx.spawnSync 'yo', ['ndx', options.appname], ->
     console.log 'done'
 else
+  console.log chalk.yellow('ndx framework ') + chalk.cyan('v' + pack.version)
+  console.log chalk.cyan('type ') + chalk.yellow('help') + chalk.cyan(' for a list of commands')
+  console.log chalk.cyan('hit ') + chalk.yellow('Ctrl-C') + chalk.cyan(' to exit')
   main()

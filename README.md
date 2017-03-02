@@ -42,7 +42,7 @@ ndx-framework requires node and npm so make sure you have them installed by typi
 ```
 * create an app  
 ```bash
-    ndx-framework --create appName
+    ndx-framework --create --appname=appName
 ```
 * navigate to`http://localhost:2323`
 
