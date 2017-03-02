@@ -147,6 +147,7 @@ server modules - install with `npm install --save module-name`
 |[ndx-cors](https://github.com/ndxbxrme/ndx-cors)| adds cors support to `api/` routes |
 |[ndx-database-backup](https://github.com/ndxbxrme/ndx-database-backup)| schedule regular database backups |
 |[ndx-framework](https://github.com/ndxbxrme/ndx-framework)| this package |
+|[ndx-gmail](https://github.com/ndxbxrme/ndx-gmail)| sends email through gmail |
 |[ndx-keep-awake](https://github.com/ndxbxrme/ndx-keep-awake)| creates and regularly calls an `api/` route, this is useful to stop your app going to sleep on hosts where that is a thing (heroku) |
 |[ndx-memory-check](https://github.com/ndxbxrme/ndx-memory-check)| adds an admin authenticated route to check the current memory usage |
 |[ndx-passport](https://github.com/ndxbxrme/ndx-passport)| provides basic login functions and local user login |
