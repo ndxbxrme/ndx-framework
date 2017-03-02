@@ -14,24 +14,24 @@
 - any other database can easily be plugged in, see [ndx-database-engine](https://github.com/ndxbxrme/ndx-database-engine)
 
 ### index
-    - [getting started](#getting started)
-    - [grunt](#grunt)
-    - [yeoman](#yeoman)
-    - [environment variables](#environment variables)
-    - [commonly used environment variables](#commonly used environment variables)
-    - [ssl](#ssl)
-    - [modules](#modules)
-    - [currently available modules](#currently available modules)
-    - [api routes and users](#api routes and users)
-    - [authenticating api routes](#authenticating api routes)
-    - [connect to the app](#connect to the app)
-    - [app monitor](#app monitor)
-    - [running your app in production](#running your app in production)
-    - [the difference between .use() and .controller](#the difference between .user() and .controller())
-    - [error handling](#error handling)
-    - [anatomy of an ndx-framework web app](#anatomy of an ndx-framework web app)
-    - [generated folders](#generated folders)
-    - [coming soon](#coming soon)
+  - [getting started](#getting started)
+  - [grunt](#grunt)
+  - [yeoman](#yeoman)
+  - [environment variables](#environment variables)
+  - [commonly used environment variables](#commonly used environment variables)
+  - [ssl](#ssl)
+  - [modules](#modules)
+  - [currently available modules](#currently available modules)
+  - [api routes and users](#api routes and users)
+  - [authenticating api routes](#authenticating api routes)
+  - [connect to the app](#connect to the app)
+  - [app monitor](#app monitor)
+  - [running your app in production](#running your app in production)
+  - [the difference between .use() and .controller](#the difference between .user() and .controller())
+  - [error handling](#error handling)
+  - [anatomy of an ndx-framework web app](#anatomy of an ndx-framework web app)
+  - [generated folders](#generated folders)
+  - [coming soon](#coming soon)
 
 ### getting started
 ndx-framework requires node and npm so make sure you have them installed by typing `node -v` and `npm -v`
@@ -160,7 +160,9 @@ server modules - install with `npm install --save module-name`
 |[ndx-superadmin](https://github.com/ndxbxrme/ndx-superadmin)| creates a default superadmin user then nags you to change her password |
 |[ndx-sync](https://github.com/ndxbxrme/ndx-sync)| synchronizes two or more instances of an ndx-framework app using websockets - provides horizontal scaling when using in-memory (and other) databases  |
 |[ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)| authenticate `api/` routes using roles |
+
 client modules - install with `bower install --save module-name`
+
 |name|description|
 |----|-----------|
 |ndx-auth|clientside role based authentication, for use in conjunction with [ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)|
