@@ -13,6 +13,8 @@ module.exports =
     console.log 'backup list'
     console.log 'backup restore'
     console.log 'password'
+    console.log 'database'
+    console.log 'memory'
     console.log ''
     cb? null
   cleanup: (cb) ->

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 //'use strict';
 (function() {
-  var async, chalk, getCommand, main, ndx, pack, pad, readline;
+  var async, chalk, cli, getCommand, main, ndx, options, pack, pad, readline;
 
   ndx = require('./ndx');
 
@@ -10,6 +10,10 @@
   chalk = require('chalk');
 
   async = require('async');
+
+  cli = require('cli');
+
+  options = cli.parse();
 
   pack = require('../package.json');
 
@@ -29,6 +33,13 @@
       case 'password':
       case 'pass':
         return require('./controllers/password');
+      case 'database':
+      case 'exec':
+      case 'sql':
+        return require('./controllers/database');
+      case 'memory':
+      case 'mem':
+        return require('./controllers/memory');
       case 'help':
         return require('./controllers/help');
     }
@@ -94,7 +105,17 @@
     }
   };
 
-  main();
+  if (options.init) {
+    ndx.spawnSync('npm', ['install', '-g', 'yo', 'generator-ndx', 'grunt-cli'], function() {
+      return console.log('done');
+    });
+  } else if (options.create) {
+    ndx.spawnSync('yo', ['ndx', options.create], function() {
+      return console.log('done');
+    });
+  } else {
+    main();
+  }
 
 }).call(this);
 

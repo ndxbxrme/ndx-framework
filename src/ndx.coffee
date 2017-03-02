@@ -1,5 +1,6 @@
 'use strict'
 
+spawn = require 'cross-spawn'
 superagent = require 'superagent'
 read = require 'read'
 
@@ -50,9 +51,22 @@ getData = (args, callback) ->
       data[args.name] = input
     return callback null, input
     
+spawnSync = (command, args, cb) ->
+  result = spawn command, args, stdio:'inherit'
+  poll = ->
+    if result._closesGot == 1
+      cb?()
+    else
+      setTimeout poll, 500
+    return
+
+  poll()
+  return
+    
 module.exports =
   data: data
   splitLine: splitLine
   accessToken: accessToken
   getToken: getToken
   getData: getData
+  spawnSync: spawnSync

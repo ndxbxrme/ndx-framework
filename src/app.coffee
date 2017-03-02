@@ -3,11 +3,12 @@ ndx = require './ndx'
 readline = require 'readline'
 chalk = require 'chalk'
 async = require 'async'
+cli = require 'cli'
+options = cli.parse()
 pack = require '../package.json'
 console.log chalk.yellow('ndx framework ') + chalk.cyan('v' + pack.version)
 console.log chalk.cyan('type ') + chalk.yellow('help') + chalk.cyan(' for a list of commands')
 console.log chalk.cyan('hit ') + chalk.yellow('Ctrl-C') + chalk.cyan(' to exit')
-
 
   
 getCommand = (commandName) ->
@@ -18,6 +19,10 @@ getCommand = (commandName) ->
       return require('./controllers/backup')
     when 'password', 'pass'
       return require('./controllers/password')
+    when 'database', 'exec', 'sql'
+      return require('./controllers/database')
+    when 'memory', 'mem'
+      return require('./controllers/memory')
     when 'help'
       return require('./controllers/help')
 
@@ -61,4 +66,13 @@ main = ->
                 console.log err
               ndx.data.command.cleanup (err) ->
                 main()
-main()
+                
+
+if options.init
+  ndx.spawnSync 'npm', ['install', '-g', 'yo', 'generator-ndx', 'grunt-cli'], ->
+    console.log 'done'
+else if options.create
+  ndx.spawnSync 'yo', ['ndx', options.create], ->
+    console.log 'done'
+else
+  main()

@@ -1,6 +1,8 @@
 (function() {
   'use strict';
-  var accessToken, data, getData, getToken, read, splitLine, superagent;
+  var accessToken, data, getData, getToken, read, spawn, spawnSync, splitLine, superagent;
+
+  spawn = require('cross-spawn');
 
   superagent = require('superagent');
 
@@ -65,12 +67,30 @@
     });
   };
 
+  spawnSync = function(command, args, cb) {
+    var poll, result;
+    result = spawn(command, args, {
+      stdio: 'inherit'
+    });
+    poll = function() {
+      if (result._closesGot === 1) {
+        if (typeof cb === "function") {
+          cb();
+        }
+      } else {
+        setTimeout(poll, 500);
+      }
+    };
+    poll();
+  };
+
   module.exports = {
     data: data,
     splitLine: splitLine,
     accessToken: accessToken,
     getToken: getToken,
-    getData: getData
+    getData: getData,
+    spawnSync: spawnSync
   };
 
 }).call(this);
