@@ -100,7 +100,7 @@
   };
 
   if (options.init) {
-    ndx.spawnSync('npm', ['install', '-g', 'yo', 'generator-ndx', 'grunt-cli'], function() {
+    ndx.spawnSync('npm', ['install', '-g', '--silent', 'yo', 'generator-ndx', 'grunt-cli'], function() {
       return console.log('done');
     });
   } else if (options.create && options.appname) {
