@@ -83,4 +83,10 @@ header ul a:hover {
   table {
     overflow-x: scroll; 
   }
+  tr, td {
+    display: block; 
+  }
+  tr th {
+    display: none; 
+  }
 }
