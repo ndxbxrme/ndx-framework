@@ -52,3 +52,11 @@ header ul a {
   text-align: left;
   height: auto;
 }
+header ul a:hover {
+  color: #D31996;
+}
+@media print, screen and (max-width: 960px) {
+  header ul {
+    position: relative; 
+  }
+}
