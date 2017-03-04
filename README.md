@@ -317,6 +317,7 @@ module.exports = (ndx) ->
         message: 'not authorized'
 ```
 ### anatomy of an ndx-framework web app
+
 | route         | description    |
 |---------------|----------------|
 | `src/client/` | the angular app|
@@ -333,6 +334,7 @@ module.exports = (ndx) ->
 | `src/server/services/`| app services |
 | `src/server/app.coffee`| the main app file - configures and starts ndx-server, register your modules/controllers/services in this file |
 | `public/`| statically served resources, put your images/fonts/favicons in here, eg `img(src='public/images/logo.png')` |
+
 ### generated folders 
 You should generally avoid messing with these folders  
 
@@ -343,6 +345,7 @@ You should generally avoid messing with these folders
 | `dist/`| the built clientside app, served in production mode `NODE_ENV=production` |
 | `node_modules/`| node modules |
 | `server/`| the built web server|
+
 ### coming soon
     - clientside database
     - clientside subscriptions to database events
