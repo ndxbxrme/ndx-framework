@@ -92,6 +92,9 @@ header ul a:hover {
   tr thead {
     display: none;
   }
+  td {
+    padding: 5px 0; 
+  }
   tr td:before {
     display: block;
     font-size: 0.6rem;
