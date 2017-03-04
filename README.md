@@ -86,7 +86,7 @@ other settings can be passed into the ndx-server `.config()` function in `src/se
 
 |Environment|Config|Required|Description|
 |-----------|------|--------|-----------|
-|-|tables|Yes|an array of database table names eg `['users','houses','friends']`
+|-          |tables|Yes     |an array of database table names eg `['users','houses','friends']`|
 |LOCAL_STORAGE|localStorage|No|local folder for data storage, eg `data` or `../data`|
 |AWS_BUCKET|awsBucket|No|AWS bucket name for S3 data persistence|
 |AWS_REGION|awsRegion|No|defaults to `us-east-1`|
