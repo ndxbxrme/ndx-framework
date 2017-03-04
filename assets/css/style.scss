@@ -31,3 +31,24 @@ header h1, header .view {
 a {
   color: #D31996;
 }
+header ul {
+  height: auto;
+  background: none;
+  border: none;
+  width: auto;
+}
+header li {
+  width: auto;
+  float: none;
+  border: none;
+  height: auto;
+}
+header ul li + li + li {
+  border: none;
+  width: auto;
+}
+header ul a {
+  padding: 3px;
+  text-align: left;
+  height: auto;
+}

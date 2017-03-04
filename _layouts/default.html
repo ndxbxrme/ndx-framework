@@ -59,5 +59,12 @@
         ga('send', 'pageview');
     </script>
   {% endif %}
+    <script>
+      var indexHeader = document.getElementById('index');
+      var index = indexHeader.nexElementSibling;
+      indexHeader.parentElement.removeChild(indexHeader);
+      index.parentElement.removeChild(index);
+      document.getElementsByTagName('header')[0].appendChild(index);
+    </script>
   </body>
 </html>
