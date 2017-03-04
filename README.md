@@ -318,10 +318,10 @@ module.exports = (ndx) ->
 ```
 ### anatomy of an ndx-framework web app
 
-| route         | description    |
-|---------------|----------------|
-| `src/client/` | the angular app|
-| `src/client/directives/`| a place to keep angular directives|
+| route                   | description                        |
+|-------------------------|------------------------------------|
+| `src/client/`           | the angular app                    |
+| `src/client/directives/`| a place to keep angular directives |
 | `src/client/filters/`| angular filters |
 | `src/client/routes/`| put your routes in here |
 | `src/client/services/`| angular services |
