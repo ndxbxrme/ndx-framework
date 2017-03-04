@@ -92,6 +92,7 @@ other settings can be passed into the ndx-server `.config()` function in `src/se
 |AWS_REGION|awsRegion|No|defaults to `us-east-1`|
 |AWS_ID|awsId|No|your aws id|
 |AWS_KEY|awsKey|No|your aws key|
+
 other modules may require their own environment variables, check that module's homepage to see what you need to set
 ### ssl
 <a name="ssl"></a>
