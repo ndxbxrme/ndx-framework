@@ -317,9 +317,9 @@ module.exports = (ndx) ->
         message: 'not authorized'
 ```
 ### anatomy of an ndx-framework web app
-| route         | description|
-|---------------|------------|
-| `src/client/`| the angular app|
+| route         | description    |
+|---------------|----------------|
+| `src/client/` | the angular app|
 | `src/client/directives/`| a place to keep angular directives|
 | `src/client/filters/`| angular filters |
 | `src/client/routes/`| put your routes in here |
@@ -336,9 +336,9 @@ module.exports = (ndx) ->
 ### generated folders 
 You should generally avoid messing with these folders  
 
-| route     | description |
-|-----------|-------------|
-| `bower/`| bower components |
+| route     | description      |
+|-----------|------------------|
+| `bower/`  | bower components |
 | `build/`| the clientside app, served only in dev mode `NODE_ENV=dev` |
 | `dist/`| the built clientside app, served in production mode `NODE_ENV=production` |
 | `node_modules/`| node modules |
