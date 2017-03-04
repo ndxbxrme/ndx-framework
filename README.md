@@ -166,8 +166,8 @@ server modules - install with `npm install --save module-name`
 
 client modules - install with `bower install --save module-name`
 
-|name|description|
-|----|-----------|
+|name                                                   |description                                                                                                                   |
+|-------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |[ndx-auth](https://github.com/ndxbxrme/ndx-auth-client)|clientside role based authentication, for use in conjunction with [ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)|  
 
 if you make any cool modules let us know and we'll add them to the list
