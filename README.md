@@ -84,8 +84,8 @@ other settings can be passed into the ndx-server `.config()` function in `src/se
 
 #### [`ndxdb`](https://github.com/ndxbxrme/ndxdb)
 
-|Environment|Config|Required|Description|
-|-----------|------|--------|-----------|
+|Environment|Config|Required|Description                                                       |
+|-----------|------|--------|------------------------------------------------------------------|
 |-          |tables|Yes     |an array of database table names eg `['users','houses','friends']`|
 |LOCAL_STORAGE|localStorage|No|local folder for data storage, eg `data` or `../data`|
 |AWS_BUCKET|awsBucket|No|AWS bucket name for S3 data persistence|
