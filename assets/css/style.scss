@@ -69,7 +69,7 @@ header ul a:hover {
   header ul {
     position: inherit; 
   }
-  .wrapper {
+  .wrapper, header, section, footer {
     width: 100%!important; 
   }
 }
