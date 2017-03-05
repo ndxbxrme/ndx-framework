@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # ndx-framework
 ### making a module
 - scaffold the module  
