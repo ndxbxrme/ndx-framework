@@ -17,6 +17,7 @@ npm link module-name
 grunt
 ```
 - register your module in `src/server/app.coffee`  
+
 ```coffeescript
 'use strict'
 
@@ -29,5 +30,6 @@ ndx = require 'ndx-server'
 .controller 'module-name'
 .start()
 ```
+
 - make your module  
 - to get module changes to show up in the app add or remove a space from `app-name/src/server/app.coffee` to force grunt to rebuild the app  
