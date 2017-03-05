@@ -136,7 +136,7 @@ require 'ndx-server'
 .controller 'ndx-static-routes'
 .start()
 ```
-[making a module]({{site.baseurl}}/docs/making_a_module.md)
+[making a module](/docs/making_a_module.md)
 
 ### currently available modules
 <a name="available"></a>
