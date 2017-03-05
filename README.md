@@ -158,6 +158,7 @@ server modules - install with `npm install --save module-name`
 |[ndx-passport-github](https://github.com/ndxbxrme/ndx-passport-github)| github oauth login |
 |[ndx-profiler](https://github.com/ndxbxrme/ndx-profiler)| collects server stats which can then be collected with [ndx-appmonitor](https://github.com/ndxbxrme/ndx-appmonitor) |
 |[ndx-publish](https://github.com/ndxbxrme/ndx-publish)| publishes database collections for the client to subscribe to |
+|[ndx-rest](https://github.com/ndxbxrme/ndx-rest)| automatically generate rest endpoints from your database |
 |[ndx-server](https://github.com/ndxbxrme/ndx-server)| the server |
 |[ndx-socket](https://github.com/ndxbxrme/ndx-socket)| adds websockets |
 |[ndx-static-routes](https://github.com/ndxbxrme/ndx-static-routes)| static routes to serve up the angular app `src/client` and the `public/` folder |
