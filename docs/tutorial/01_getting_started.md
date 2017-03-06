@@ -10,5 +10,6 @@ ndx-framework --init
 ndx-framework --create --appname=tutorial
 ```
 - navigate to http://localhost:3000 to see your app running
-
+<div style="text-align: right">
 ### [next (users)](/02_users.md)
+</div>
