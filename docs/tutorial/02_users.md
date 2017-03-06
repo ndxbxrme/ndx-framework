@@ -6,6 +6,7 @@
 - scaffold a simple login directive  
 `yo ndx:login`  
 - add it to `src/client/index.jade`, make a logout button and hide the main page if not logged in  
+
 ```jade
   body(ng-app='tutorial')
     login
@@ -14,6 +15,7 @@
         a(href='/api/logout', target='_self) Log out
       .view(ui-view='')
 ```
+
 - install [ndx-passport](https://github.com/ndxbxrme/ndx-passport) for serverside email/password login  
 `npm install --save ndx-passport`  
 - and add it to `src/server/app.coffee`.  
@@ -48,5 +50,6 @@ angular.module 'tutorial'
       user: (auth) ->
         auth.getPromise()
 ```
+
 - start your app back up by typing `grunt`
 - you should now be able to sign up and log in
