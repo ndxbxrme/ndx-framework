@@ -16,7 +16,7 @@
 ```
 - install [ndx-passport](https://github.com/ndxbxrme/ndx-passport) for serverside email/password login  
 `npm install --save ndx-passport`  
-- and add it to `src/server/app.coffee`  
+- and add it to `src/server/app.coffee`.  
 
 ```coffeescript
 'use strict'
