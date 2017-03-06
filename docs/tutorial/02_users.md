@@ -32,7 +32,8 @@ ndx = require 'ndx-server'
 ```
 
 - alter the routes to resolve the user  
-`src/client/routes/dashbard/dashboard.routes.coffee`
+`src/client/routes/dashbard/dashboard.routes.coffee`  
+
 ```coffeescript
 'use strict'
 
