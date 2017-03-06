@@ -1,6 +1,6 @@
 # Getting started
 
-- install ndx-framework, only needs doing once  
+- install ndx-framework, this only needs doing once  
 ```bash
 npm install -g ndx-framework
 ndx-framework --init
@@ -9,7 +9,6 @@ ndx-framework --init
 ```bash
 ndx-framework --create --appname=tutorial
 ```
-- navigate to http://localhost:3000 to see your app running
-<div style="text-align: right">
+- navigate to [http://localhost:3000](http://localhost:3000) to see your app running
+
 ### [next (users)](/02_users.md)
-</div>
