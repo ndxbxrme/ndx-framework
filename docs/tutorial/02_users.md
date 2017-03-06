@@ -7,6 +7,7 @@
 `yo ndx:login`  
 - add it to `src/client/index.jade`, make a logout button and hide the main page if not logged in  
 
+
 ```jade
   body(ng-app='tutorial')
     login
