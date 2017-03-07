@@ -1,8 +1,8 @@
 ### index
-- [01 - getting started](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/01_getting_started.html)
-- [02 - users](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/02_users.html)
-- [03 - rest api](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/03_restapi.html)
-- _[04 - pagination and sorting](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/04_paging_and_sorting.html)_
+- [01 - getting started](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/01_getting_started)
+- [02 - users](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/02_users)
+- [03 - rest api](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/03_restapi)
+- _[04 - pagination and sorting](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/04_paging_and_sorting)_
 - [05 - search and delete](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/05_search_and_delete)
 
 # pagination and sorting
@@ -74,3 +74,5 @@ angular.module 'tutorial'
     .email { { person.email }}
   pagination(ng-model='peopleOpts.page', total='people.total', page-size='peopleOpts.pageSize')
 ```
+
+### [next > >](/docs/tutorial/05_search_and_delete)

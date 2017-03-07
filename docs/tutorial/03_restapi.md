@@ -1,8 +1,8 @@
 ### index
-- [01 - getting started](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/01_getting_started.html)
-- [02 - users](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/02_users.html)
-- _[03 - rest api](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/03_restapi.html)_
-- [04 - pagination and sorting](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/04_paging_and_sorting.html)
+- [01 - getting started](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/01_getting_started)
+- [02 - users](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/02_users)
+- _[03 - rest api](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/03_restapi)_
+- [04 - pagination and sorting](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/04_paging_and_sorting)
 - [05 - search and delete](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/05_search_and_delete)
 
 # rest api
@@ -77,4 +77,4 @@ angular.module 'tutorial'
 - start the app with `grunt` and you should see a list of people:)
 
 
-### [next > >](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/04_paging_and_searching.html)
+### [next > >](/docs/tutorial/04_paging_and_sorting)
