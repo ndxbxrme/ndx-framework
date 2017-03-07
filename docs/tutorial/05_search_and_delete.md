@@ -22,6 +22,10 @@ angular.module 'tutorial'
   $scope.peopleOpts =
     where:
       name: $scope.search
+    page: 1
+    pageSize: 10
+    sort: 'name'
+    sortDir: 'ASC'
   $scope.people = $scope.list 'people', $scope.peopleOpts
 ```
 
