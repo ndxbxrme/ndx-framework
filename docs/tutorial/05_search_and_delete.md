@@ -45,4 +45,4 @@ angular.module 'tutorial'
   pagination(ng-model='peopleOpts.page', total='people.total', page-size='peopleOpts.pageSize')
 ```  
 
-### [next > >](/docs/tutorial/06_live_data)
+### [next > >](/06_live_data)
