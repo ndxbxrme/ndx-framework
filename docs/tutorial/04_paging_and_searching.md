@@ -5,8 +5,9 @@
 - [04 - pagination and search](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/04_paging_and_searching.html)
 
 # pagination and search
-
+### options
 - add an options object to the `list` function  
+
 #### `src/client/routes/dashboard/dashboard.ctrl.coffee`  
 
 ```coffeescript
@@ -21,8 +22,11 @@ angular.module 'tutorial'
 ```
 
 - your app should now only show 10 people  
+
+### pagination
 - now lets paginate the people list  
 `bower install --save ndx-pagination`  
+
 #### `src/client/routes/dashboard/dashboard.jade` 
 
 ```jade
@@ -35,6 +39,7 @@ angular.module 'tutorial'
 
 ### search
 - add a `where` object to the list options  
+
 #### `src/client/routes/dashboard/dashboard.ctrl.coffee`  
 
 ```coffeescript
@@ -51,6 +56,7 @@ angular.module 'tutorial'
 ```
 
 - hook up a text input in the view
+
 #### `src/client/routes/dashboard/dashboard.jade`  
 
 ```jade
