@@ -63,10 +63,12 @@ angular.module 'tutorial'
 
 #### `src/client/routes/dashboard/dashboard.jade`  
 
-```jade
+<pre>
+  <code class="language-jade">
 .dashboard 
   h2 my people
   p(ng-repeat='person in people.items') {{person.name}}
-```
+  </code>
+</pre>
 
 - start the app with `grunt` and you should see a list of people:)
