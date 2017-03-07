@@ -1,7 +1,7 @@
 ### index
 - [01 - getting started](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/01_getting_started.html)
 - [02 - users](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/02_users.html)
-- [03 - rest api](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/03_rest_api.html)
+- [03 - rest api](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/03_restapi.html)
 - [04 - pagination and search](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/04_paging_and_searching.html)
 
 # 01 - Getting started
