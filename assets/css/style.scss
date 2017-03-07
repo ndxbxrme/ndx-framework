@@ -46,6 +46,9 @@ header h1, header .view {
 a {
   color: #D31996;
 }
+.wrapper {
+  width: auto;
+}
 section {
   width: auto;
   margin-left: 280px;
@@ -87,6 +90,9 @@ header ul a:hover {
   }
   .wrapper, header, section, footer {
     width: 100%!important; 
+  }
+  section: {
+    margin-right: 0; 
   }
   table {
     overflow-x: scroll; 
