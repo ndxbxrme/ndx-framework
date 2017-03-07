@@ -66,7 +66,7 @@ main = ->
                 
 
 if options.init
-  ndx.spawnSync 'npm', ['install', '-g', '--silent', 'yo', 'generator-ndx', 'grunt-cli'], ->
+  ndx.spawnSync 'npm', ['install', '-g', '--silent', 'yo', 'generator-ndx', 'grunt-cli', 'bower'], ->
     console.log 'done'
 else if options.create and options.appname
   ndx.spawnSync 'yo', ['ndx', options.appname], ->
