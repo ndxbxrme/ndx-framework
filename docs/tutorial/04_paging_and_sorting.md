@@ -63,15 +63,14 @@ angular.module 'tutorial'
 ```jade
 .dashboard
   h2 my people
-  input(type='text', ng-model='search.$like')
   select(ng-model='peopleOpts.sort')
     option name
-    option emaile
+    option email
   select(ng-model='peopleOpts.sortDir')
     option ASC
     option DESC
   .person(ng-repeat='person in people.items') 
-    .name {{ person.name }}
-    .email {{ person.emaile }}
+    .name { { person.name }}
+    .email { { person.email }}
   pagination(ng-model='peopleOpts.page', total='people.total', page-size='peopleOpts.pageSize')
 ```

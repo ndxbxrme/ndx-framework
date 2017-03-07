@@ -7,7 +7,6 @@
 
 # search and delete
 
-### search
 - add a `where` object to the list options  
 
 #### `src/client/routes/dashboard/dashboard.ctrl.coffee`  
@@ -25,7 +24,7 @@ angular.module 'tutorial'
   $scope.people = $scope.list 'people', $scope.peopleOpts
 ```
 
-- hook up a text input in the view
+- hook up a text input in the view and add a delete button
 
 #### `src/client/routes/dashboard/dashboard.jade`  
 
@@ -33,6 +32,15 @@ angular.module 'tutorial'
 .dashboard
   h2 my people
   input(type='text', ng-model='search.$like')
-  p(ng-repeat='person in people.items') {{ person.name }}
+  select(ng-model='peopleOpts.sort')
+    option name
+    option email
+  select(ng-model='peopleOpts.sortDir')
+    option ASC
+    option DESC
+  .person(ng-repeat='person in people.items') 
+    .name { { person.name }}
+    .email { { person.email }}
+    a.delete(href='', ng-click='people.delete(person)') Delete
   pagination(ng-model='peopleOpts.page', total='people.total', page-size='peopleOpts.pageSize')
 ```  
