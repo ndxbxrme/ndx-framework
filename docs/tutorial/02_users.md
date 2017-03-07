@@ -55,4 +55,4 @@ angular.module 'tutorial'
 - start your app back up by typing `grunt`
 - you should now be able to sign up and log in
 
-### [next > >](ndx-framework/docs/tutorial/03_restapi.html)
+### [next > >](/ndx-framework/docs/tutorial/03_restapi.html)
