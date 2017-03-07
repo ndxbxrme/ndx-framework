@@ -1,7 +1,7 @@
 ### index
 - [01 - getting started](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/01_getting_started.html)
 - [02 - users](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/02_users.html)
-- [01 - rest api](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/03_rest_api.html)
+- [03 - rest api](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/03_rest_api.html)
 
 # rest api
 - make a module to add some data to the database  
@@ -47,7 +47,7 @@ ndx = require 'ndx-server'
 - install the [ndx-rest](https://github.com/ndxbxrme/ndx-rest-client) client  
 `bower install --save ndx-rest`  
 
-- subscribe to the `people` table  
+- list objects from the `people` table  
 
 #### `src/client/routes/dashboard/dashboard.ctrl.coffee`
 
@@ -70,3 +70,6 @@ angular.module 'tutorial'
 ```
 
 - start the app with `grunt` and you should see a list of people:)
+
+
+### [next > >](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/04_paging_and_searching.html)
