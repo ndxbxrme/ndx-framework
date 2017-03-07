@@ -70,6 +70,9 @@
         }
       }
       var jades = document.getElementsByClassName('language-jade');
+      for(var f=0; f<jades.length; f++) {
+        jades[f].innerText = jades[f].innerText.replace(/\{ \{/g, '{{'); 
+      }
       console.log(jades);
     </script>
   </body>
