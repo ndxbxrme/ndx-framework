@@ -45,7 +45,7 @@ ndx-framework requires node and npm so make sure you have them installed by typi
 ```bash
     ndx-framework --create --appname=appName
 ```
-* navigate to`http://localhost:3000`
+* navigate to `http://localhost:3000`
 
 ### grunt
 ndx-framework uses [grunt](https://gruntjs.com/) to run and livereload your app while in development  
