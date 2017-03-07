@@ -68,7 +68,7 @@ angular.module 'tutorial'
 
 #### `src/client/routes/dashboard/dashboard.jade`  
 
-```jade
+```pug
 .dashboard 
   h2 my people
   p(ng-repeat='person in people.items') { { person.name }}

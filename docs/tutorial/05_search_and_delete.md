@@ -28,7 +28,7 @@ angular.module 'tutorial'
 
 #### `src/client/routes/dashboard/dashboard.jade`  
 
-```jade
+```pug
 .dashboard
   h2 my people
   input(type='text', ng-model='search.$like')

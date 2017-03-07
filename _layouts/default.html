@@ -69,7 +69,7 @@
           document.getElementsByTagName('header')[0].appendChild(index);
         }
       }
-      var jades = document.getElementsByClassName('language-jade');
+      var jades = document.getElementsByClassName('language-pug');
       var replacement = '{' + '{';
       for(var f=0; f<jades.length; f++) {
         jades[f].innerText = jades[f].innerText.replace(/\{ \{/g, replacement); 
