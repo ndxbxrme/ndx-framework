@@ -66,7 +66,7 @@ angular.module 'tutorial'
 ```jade
 .dashboard 
   h2 my people
-  p(ng-repeat='person in people.items') \{\{person.name\}\}
+  p(ng-repeat='person in people.items') {{ pers }}
 ```
 
 - start the app with `grunt` and you should see a list of people:)
