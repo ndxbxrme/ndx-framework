@@ -5,6 +5,7 @@
 - [04 - pagination and search](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/04_paging_and_searching.html)
 
 # 02 - users
+### login
 - stop the app by hitting Ctrl-C twice and cd into the project directory  
 `cd tutorial`  
 - add the [ndx-auth](https://github.com/ndxbxrme/ndx-auth-client) client  
@@ -23,6 +24,7 @@
       .view(ui-view='')
 ```
 
+### server
 - install [ndx-passport](https://github.com/ndxbxrme/ndx-passport) for serverside email/password login  
 `npm install --save ndx-passport`  
 - and add it to `src/server/app.coffee`.  
@@ -41,6 +43,7 @@ ndx = require 'ndx-server'
 .start()
 ```
 
+### routes
 - alter the routes to resolve the user  
 
 #### `src/client/routes/dashbard/dashboard.routes.coffee`  

@@ -5,6 +5,7 @@
 - [04 - pagination and search](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/04_paging_and_searching.html)
 
 # rest api
+### data
 - make a module to add some data to the database  
 `npm install --save chance`  
 
@@ -25,6 +26,7 @@ module.exports = (ndx) ->
           name: chance.name()
           email: chance.email()
 ```  
+### server
 - create a new database table in ndx-server.config() and add your module and [ndx-rest](https://github.com/ndxbxrme/ndx-rest) to the .use list  
 `npm install --save ndx-rest`  
 
@@ -45,6 +47,7 @@ ndx = require 'ndx-server'
 .start()
 ```
 
+### rest client
 - install the [ndx-rest](https://github.com/ndxbxrme/ndx-rest-client) client  
 `bower install --save ndx-rest`  
 
