@@ -43,7 +43,7 @@ angular.module 'tutorial'
 
 #### `src/client/routes/dashboard/dashboard.ctrl.coffee`  
 
-```coffeescript
+```diff
 'use strict'
 
 angular.module 'tutorial'
