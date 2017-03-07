@@ -19,7 +19,8 @@ module.exports = (ndx) ->
           name: chance.name()
           email: chance.email()
 ```  
-- create a new database table in ndx-server.config() and add your module to the .use list  
+- create a new database table in ndx-server.config() and add your module and [ndx-rest](https://github.com/ndxbxrme/ndx-rest) to the .use list  
+`npm install --save ndx-rest`  
 
 #### `src/server/app.coffee`  
 
