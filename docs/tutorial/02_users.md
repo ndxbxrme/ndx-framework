@@ -7,7 +7,7 @@
 `yo ndx:login`  
 - add it to `src/client/index.jade`, make a logout button and hide the main page if not logged in  
 
-
+#### `src/client/index.jade`
 ```jade
   body(ng-app='tutorial')
     login
@@ -21,6 +21,7 @@
 `npm install --save ndx-passport`  
 - and add it to `src/server/app.coffee`.  
 
+#### `src/server/app.coffee`
 ```coffeescript
 'use strict'
 
@@ -35,7 +36,8 @@ ndx = require 'ndx-server'
 ```
 
 - alter the routes to resolve the user  
-`src/client/routes/dashbard/dashboard.routes.coffee`  
+
+#### `src/client/routes/dashbard/dashboard.routes.coffee`  
 
 ```coffeescript
 'use strict'
