@@ -67,7 +67,7 @@ angular.module 'tutorial'
   <code class="language-jade">
 .dashboard 
   h2 my people
-  p(ng-repeat='person in people.items') {{person.name}}
+  p(ng-repeat='person in people.items') {{ person.name }}
   </code>
 </pre>
 
