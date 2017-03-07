@@ -69,6 +69,10 @@
           document.getElementsByTagName('header')[0].appendChild(index);
         }
       }
+      var jades = document.getElementsByClassName('language-jade');
+      for(var f=0; f<jades.length; f++) {
+        jades.innerText = jades.innerText.replace('{ {', '{{');
+      }
     </script>
   </body>
 </html>
