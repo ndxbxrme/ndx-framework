@@ -43,7 +43,7 @@ angular.module 'tutorial'
 
 #### `src/client/routes/dashboard/dashboard.ctrl.coffee`  
 
-```diff
+```coffeescript
 'use strict'
 
 angular.module 'tutorial'
@@ -51,8 +51,8 @@ angular.module 'tutorial'
   $scope.peopleOpts =
     page: 1
     pageSize: 10
-+   sort: 'name'
-+   sortDir: 'ASC'
+    sort: 'name'
+    sortDir: 'ASC'
 ```   
 
 - now the people are sorted;)
@@ -64,14 +64,14 @@ angular.module 'tutorial'
 .dashboard
   h2 my people
   input(type='text', ng-model='search.$like')
-+ select(ng-model='peopleOpts.sort')
-+   option name
-+   option emaile
-+ select(ng-model='peopleOpts.sortDir')
-+   option ASC
-+   option DESC
-+ .person(ng-repeat='person in people.items') 
-+   .name {{ person.name }}
-+   .email {{ person.emaile }}
+  select(ng-model='peopleOpts.sort')
+    option name
+    option emaile
+  select(ng-model='peopleOpts.sortDir')
+    option ASC
+    option DESC
+  .person(ng-repeat='person in people.items') 
+    .name {{ person.name }}
+    .email {{ person.emaile }}
   pagination(ng-model='peopleOpts.page', total='people.total', page-size='peopleOpts.pageSize')
 ```
