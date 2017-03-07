@@ -50,4 +50,6 @@ angular.module 'tutorial'
   pagination(ng-model='peopleOpts.page', total='people.total', page-size='peopleOpts.pageSize')
 ```  
 
+- now you can search and delete
+
 ### [next > >](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/06_live_data)
