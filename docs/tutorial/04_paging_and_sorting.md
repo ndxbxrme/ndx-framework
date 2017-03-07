@@ -4,6 +4,7 @@
 - [03 - rest api](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/03_restapi)
 - _[04 - pagination and sorting](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/04_paging_and_sorting)_
 - [05 - search and delete](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/05_search_and_delete)
+- [06 - live data](https://ndxbxrme.github.io.ndx-framework/docs/tutorial/06_live_data)
 
 # pagination and sorting
 ### options
@@ -75,4 +76,4 @@ angular.module 'tutorial'
   pagination(ng-model='peopleOpts.page', total='people.total', page-size='peopleOpts.pageSize')
 ```
 
-### [next > >](/docs/tutorial/05_search_and_delete)
+### [next > >](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/05_search_and_delete)
