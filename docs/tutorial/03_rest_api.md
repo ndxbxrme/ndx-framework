@@ -1,6 +1,7 @@
 # rest api
 - make a module to add some data to the database  
 `npm install --save chance`  
+
 #### `src/server/services/startup.coffee`  
 
 ```coffeescript
@@ -19,6 +20,7 @@ module.exports = (ndx) ->
           email: chance.email()
 ```  
 - create a new database table in ndx-server.config() and add your module to the .use list  
+
 #### `src/server/app.coffee`  
 
 ```coffeescript
@@ -40,6 +42,7 @@ ndx = require 'ndx-server'
 `bower install --save ndx-rest`  
 
 - subscribe to the `people` table  
+
 #### `src/client/routes/dashboard/dashboard.ctrl.coffee`
 
 ```coffeescript
@@ -51,6 +54,7 @@ angular.module 'tutorial'
 ```  
 
 - render the results in the view  
+
 #### `src/client/routes/dashboard/dashboard.jade`  
 
 ```jade
