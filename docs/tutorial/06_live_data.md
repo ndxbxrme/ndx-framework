@@ -21,7 +21,6 @@ require 'ndx-server'
   database: 'db'
   tables: ['users', 'people']
   localStorage: './data'
-  skipIpEncrypt: true
 .use require './services/startup'
 .use 'ndx-passport'
 .use 'ndx-rest'
