@@ -26,8 +26,8 @@ when asked, type `true` for roles and `:id` for parameters
 ```pug
 [...]
   .person(ng-repeat='person in people.items') 
-    a.name(ui-sref='person({id:person._id})') {{ person.name }}
-    .email {{ person.email }}
+    a.name(ui-sref='person({id:person._id})') { { person.name }}
+    .email { { person.email }}
     a.delete(href='', ng-click='people.delete(person)') Delete
 [...]
 ```
