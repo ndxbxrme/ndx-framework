@@ -5,6 +5,7 @@
 - [04 - pagination and sorting](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/04_paging_and_sorting)
 - [05 - search and delete](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/05_search_and_delete)
 - [06 - live data](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/06_live_data)
+- [07 - items and routes](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/07_items_and_routes)
 
 # rest api
 ### data
