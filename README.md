@@ -201,7 +201,7 @@ the `ndx` object gets passed to each controller and service
 other modules can add extra properties and methods to the `ndx` object, eg `ndx-passport` which adds `ndx.passport` for the other passport modules to use.
 
 ### api routes and users
-all routes that start with `api/` get the currently logged in user as `req.user`, eg  
+all routes that start with `api/` get the currently logged in user as `ndx.user`, eg  
 `src/server/app.coffee`
 ```coffeescript
 require 'ndx-server'
@@ -210,8 +210,8 @@ require 'ndx-server'
 .use 'ndx-passport'
 .controller (ndx) ->
   ndx.app.get 'api/test', (req, res, next) ->
-    if req.user
-      res.end "Hi #{req.user.local.email}"
+    if ndx.user
+      res.end "Hi #{ndx.user.local.email}"
     else
       next 'not logged in'
 .start()
@@ -310,8 +310,8 @@ to handle an error within an api route simply call `next()` with an error messag
 ```coffeescript
 module.exports = (ndx) ->
   ndx.app.get 'api/error', (req, res, next) ->
-    if req.user
-      if req.user.local.email is 'a@a.com'
+    if ndx.user
+      if ndx.user.local.email is 'a@a.com'
         res.end 'you\'re cool'
       else
         next 'i don\'t like you'
