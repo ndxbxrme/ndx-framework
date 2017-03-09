@@ -16,7 +16,7 @@ when asked, type `true` for roles and `:id` for parameters
 λ yo ndx:route person
 ? Where would you like to create this route? /src/client/routes/person
 ? User roles true
-? Parameters, eg :id/something/:another :id
+? Parameters (eg. :id/something/:another) :id
 ```
 
 - convert the person's name into a link in the `dashboard` view  
@@ -32,7 +32,7 @@ when asked, type `true` for roles and `:id` for parameters
 [...]
 ```
 
-- open `/src/client/routes/person/person.ctrl.coffee` and grab the person in from their id  
+- open `/src/client/routes/person/person.ctrl.coffee` and grab the person from their id  
 
 #### `/src/client/routes/person/person.ctrl.coffee`  
 

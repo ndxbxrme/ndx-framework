@@ -49,3 +49,6 @@ require 'ndx-server'
 ```
 
 - open the app in two browsers and try deleting some people  
+
+
+### [next > >](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/07_items_and_routes)
