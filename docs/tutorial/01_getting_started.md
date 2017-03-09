@@ -8,6 +8,8 @@
 - [07 - items and routes](https://ndxbxrme.github.io/ndx-framework/docs/tutorial/07_items_and_routes)
 
 # 01 - Getting started
+- make sure you have node installed, type `node -v` to check  
+if not then visit [https://nodejs.org/en/](https://nodejs.org/en/) to get it  
 
 - install ndx-framework, this only needs doing once  
 ```bash
