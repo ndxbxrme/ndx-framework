@@ -148,22 +148,27 @@ server modules - install with `npm install --save module-name`
 |[ndx-connect](https://github.com/ndxbxrme/ndx-connect)| lets authenticated users connect to the database to perform arbitrary operations |
 |[ndx-cors](https://github.com/ndxbxrme/ndx-cors)| adds cors support to `api/` routes |
 |[ndx-database-backup](https://github.com/ndxbxrme/ndx-database-backup)| schedule regular database backups |
+|[ndxdb](https://github.com/ndxbxrme/ndxdb)|super-flexible alasql based database |
 |[ndx-framework](https://github.com/ndxbxrme/ndx-framework)| this package |
 |[ndx-gmail](https://github.com/ndxbxrme/ndx-gmail)| sends email through gmail |
 |[ndx-keep-awake](https://github.com/ndxbxrme/ndx-keep-awake)| creates and regularly calls an `api/` route, this is useful to stop your app going to sleep on hosts where that is a thing (heroku) |
-|[ndx-memory-check](https://github.com/ndxbxrme/ndx-memory-check)| adds an admin authenticated route to check the current memory usage |
+|[ndx-memory-check](https://github.com/ndxbxrme/ndx-memory-check)| makes an admin authenticated route to check the current memory usage |
+|[ndx-modified](https://github.com/ndxbxrme/ndx-modified)| adds `modifiedAd` and `modifiedBy` fields to all database `updates` and `inserts` |
 |[ndx-passport](https://github.com/ndxbxrme/ndx-passport)| provides basic login functions and local user login |
 |[ndx-passport-facebook](https://github.com/ndxbxrme/ndx-passport-facebook)| facebook oauth login |
 |[ndx-passport-twitter](https://github.com/ndxbxrme/ndx-passport-twitter)| twitter oauth login |
 |[ndx-passport-github](https://github.com/ndxbxrme/ndx-passport-github)| github oauth login |
+|[ndx-permissions](https://github.com/ndxbxrme/ndx-permissions)|role based database permissions |
 |[ndx-profiler](https://github.com/ndxbxrme/ndx-profiler)| collects server stats which can then be collected with [ndx-appmonitor](https://github.com/ndxbxrme/ndx-appmonitor) |
 |[ndx-publish](https://github.com/ndxbxrme/ndx-publish)| publishes database collections for the client to subscribe to |
 |[ndx-rest](https://github.com/ndxbxrme/ndx-rest)| automatically generate rest endpoints from your database |
+|[ndx-scheduler](https://github.com/ndxbxrme/ndx-scheduler)|schedule server events |
 |[ndx-server](https://github.com/ndxbxrme/ndx-server)| the server |
 |[ndx-socket](https://github.com/ndxbxrme/ndx-socket)| adds websockets |
 |[ndx-static-routes](https://github.com/ndxbxrme/ndx-static-routes)| static routes to serve up the angular app `src/client` and the `public/` folder |
 |[ndx-superadmin](https://github.com/ndxbxrme/ndx-superadmin)| creates a default superadmin user then nags you to change her password |
 |[ndx-sync](https://github.com/ndxbxrme/ndx-sync)| synchronizes two or more instances of an ndx-framework app using websockets - provides horizontal scaling when using in-memory (and other) databases  |
+|[ndx-timezone](https://github.com/ndxbxrme/ndx-timezone)| a service for converting dates to a user's timezone with daylight savings|
 |[ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)| authenticate `api/` routes using roles |
 
 client modules - install with `bower install --save module-name`
