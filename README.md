@@ -176,9 +176,12 @@ client modules - install with `bower install --save module-name`
 |name                                                   |description                                                                                                                   |
 |-------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |[ndx-auth](https://github.com/ndxbxrme/ndx-auth-client)|clientside role based authentication, for use in conjunction with [ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)|  
+|[ndx-error-redirect](https://github.com/ndxbxrme/ndx-error-redirect)|redirect on server errors| 
 |[ndx-rest](https://github.com/ndxbxrme/ndx-rest-client)|rest client, to complement [ndx-rest](https://github.com/ndxbxrme/ndx-rest)|
 |[ndx-pagination](https://github.com/ndxbxrme/ndx-pagination)|simple angular list paginator|
+|[ndx-scroll-top](https://github.com/ndxbxrme/ndx-scroll-top)|scroll to top on page change|
 |[ndx-timezone](https://github.com/ndxbxrme/ndx-timezone-client)|collects user's timezone data, for use with [ndx-timezone](https://github.com/ndxbxrme/ndx-timezone) |
+
 
 if you make any cool modules let us know and we'll add them to the list
 
