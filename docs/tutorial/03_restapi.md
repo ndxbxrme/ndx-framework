@@ -12,7 +12,7 @@
 - make a module to add some data to the database  
 `npm install --save chance`  
 
-#### `src/server/services/startup.coffee`  
+#### `src/server/startup/addpeople.coffee`  
 
 ```coffeescript
 'use strict'
@@ -30,7 +30,7 @@ module.exports = (ndx) ->
           email: chance.email()
 ```  
 ### server
-- create a new database table in ndx-server.config() called `people` and add your module and [ndx-rest](https://github.com/ndxbxrme/ndx-rest) to the .use list  
+- install [ndx-rest](https://github.com/ndxbxrme/ndx-rest) and create a new database table in ndx-server.config() called `people`
 `npm install --save ndx-rest`  
 
 #### `src/server/app.coffee`  
@@ -43,10 +43,6 @@ require 'ndx-server'
   database: 'db'
   tables: ['users', 'people']
   localStorage: './data'
-.use require './services/startup'
-.use 'ndx-passport'
-.use 'ndx-rest'
-.use 'ndx-static-routes'
 .start()
 ```
 
