@@ -55,6 +55,7 @@ angular.module 'tutorial'
     pageSize: 10
     sort: 'name'
     sortDir: 'ASC'
+  $scope.people = $scope.list 'people', $scope.peopleOpts
 ```   
 
 - now the people are sorted;)
