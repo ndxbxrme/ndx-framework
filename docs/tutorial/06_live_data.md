@@ -12,7 +12,7 @@
 `npm install --save ndx-socket`  
 
 - install clientside sockets  
-`bower install --save ndx-socket
+`bower install --save ndx-socket`
 
 
 - open the app in two browsers and try deleting some people  
