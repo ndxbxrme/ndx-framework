@@ -31,6 +31,7 @@ module.exports = (ndx) ->
 ```  
 ### server
 - install [ndx-rest](https://github.com/ndxbxrme/ndx-rest) and create a new database table in ndx-server.config() called `people`  
+
 `npm install --save ndx-rest`  
 
 #### `src/server/app.coffee`  
