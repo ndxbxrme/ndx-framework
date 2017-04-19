@@ -1,4 +1,4 @@
-#!/usr/bin/env node 
+#!/usr/bin/env node
 //'use strict';
 (function() {
   var async, chalk, cli, getCommand, main, ndx, options, pack, pad, readline;
