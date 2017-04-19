@@ -1,6 +1,6 @@
 {
   "name": "ndx-framework",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "ndx-framework",
   "main": "build/app.js",
   "bin": "build/app.js",
@@ -25,6 +25,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-express-server": "^0.5.3",
     "grunt-file-append": "0.0.7",
+    "grunt-lineending": "^1.0.0",
     "load-grunt-tasks": "^3.5.2"
   },
   "dependencies": {
