@@ -41,7 +41,7 @@ module.exports = (grunt) ->
     'clean:build'
     'coffee'
     'file_append'
-    'lineending'
+    #'lineending'
   ]
   grunt.registerTask 'default', [
     'build'
