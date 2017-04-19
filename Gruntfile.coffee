@@ -30,18 +30,18 @@ module.exports = (grunt) ->
     file_append:
       main:
         files: [{
-          prepend: '#!/usr/bin/env node\n//\'use strict\';\n'
+          prepend: '#!/usr/bin/env node \n//\'use strict\';\n'
           input: 'build/app.js'
           output: 'build/app.js'
         }]
     lineending:
       dist:
-        'build\/app.js': 'build\/app.js'
+        'build/app.js': 'build/app.js'
   grunt.registerTask 'build', [
     'clean:build'
     'coffee'
     'file_append'
-    #'lineending'
+    'lineending'
   ]
   grunt.registerTask 'default', [
     'build'
