@@ -16,10 +16,14 @@ getCommand = (commandName) ->
       return require('./controllers/backup')
     when 'password', 'pass'
       return require('./controllers/password')
-    when 'database', 'exec', 'sql'
+    when 'database', 'exec', 'sql', 'd'
       return require('./controllers/database')
     when 'memory', 'mem'
       return require('./controllers/memory')
+    when 'token'
+      return require('./controllers/token')
+    when 'revoke'
+      return require('./controllers/revoke')
     when 'help'
       return require('./controllers/help')
 

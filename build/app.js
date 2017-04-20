@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node 
 //'use strict';
 (function() {
   var async, chalk, cli, getCommand, main, ndx, options, pack, pad, readline;
@@ -30,10 +30,15 @@
       case 'database':
       case 'exec':
       case 'sql':
+      case 'd':
         return require('./controllers/database');
       case 'memory':
       case 'mem':
         return require('./controllers/memory');
+      case 'token':
+        return require('./controllers/token');
+      case 'revoke':
+        return require('./controllers/revoke');
       case 'help':
         return require('./controllers/help');
     }
