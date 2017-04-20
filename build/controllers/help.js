@@ -17,6 +17,8 @@
       console.log('backup restore');
       console.log('password');
       console.log('database');
+      console.log('token');
+      console.log('revoke');
       console.log('memory');
       console.log('');
       return typeof cb === "function" ? cb(null) : void 0;
