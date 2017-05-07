@@ -1,9 +1,14 @@
 {
   "name": "ndx-framework",
-  "version": "0.2.18",
+  "version": "0.2.19",
   "description": "ndx-framework",
   "main": "build/app.js",
-  "bin": "build/app.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "bin": {
+    "ndx-framework": "build/app"
+  },
   "scripts": {
     "test": "node build/test/test.js"
   },
@@ -37,5 +42,8 @@
     "q": "^1.4.1",
     "read": "^1.0.7",
     "superagent": "^3.4.0"
-  }
+  },
+  "files": [
+    "build"
+  ]
 }

@@ -224,7 +224,15 @@ require 'ndx-server'
     else
       next 'not logged in'
 .start()
+```  
+`ndx-user` can not be relied upon in async situations  
+we recommend that you wrap it in a closure before going async, eg  
 ```
+ndx.app.get 'api/async', (req, res) ->
+  ((user) ->
+    asyncFunction ->
+      ndx.user = user
+  )(ndx.user)
 ### authenticating api routes
 without roles  
 `src/server/app.coffee`
