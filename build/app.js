@@ -2,7 +2,7 @@
 
 'use strict';
 (function() {
-  var async, chalk, cli, getCommand, main, ndx, options, pack, pad, readline;
+  var async, bowerDeps, chalk, cli, dep, deps, devDeps, getCommand, localBower, localNpm, main, ndx, options, pack, pad, path, readline;
 
   ndx = require('./ndx');
 
@@ -13,6 +13,8 @@
   async = require('async');
 
   cli = require('cli');
+
+  path = require('path');
 
   options = cli.parse();
 
@@ -113,6 +115,46 @@
     ndx.spawnSync('yo', ['ndx', options.appname], function() {
       return console.log('done');
     });
+  } else if (options['update-packages']) {
+    localNpm = require(path.join(process.cwd(), 'package.json'));
+    localBower = require(path.join(process.cwd(), 'bower.json'));
+    devDeps = [];
+    deps = [];
+    bowerDeps = [];
+    if (localNpm) {
+      for (dep in localNpm.devDependencies) {
+        if (dep.indexOf('ndx') !== -1) {
+          devDeps.push(dep);
+        }
+      }
+      for (dep in localNpm.dependencies) {
+        if (dep.indexOf('ndx') !== -1) {
+          deps.push(dep);
+        }
+      }
+    }
+    if (localBower) {
+      for (dep in localBower.Dependencies) {
+        if (dep.indexOf('ndx') !== -1) {
+          bowerDeps.push(dep);
+        }
+      }
+    }
+    if (devDeps.length) {
+      ndx.spawnSync('npm', ['uninstall', '--save-dev', '--silent'].concat(devDeps), function() {
+        return ndx.spawnSync('npm', ['install', '--save-dev', '--silent'].concat(devDeps));
+      });
+    }
+    if (deps.length) {
+      ndx.spawnSync('npm', ['uninstall', '--save', '--silent'].concat(deps), function() {
+        return ndx.spawnSync('npm', ['install', '--save', '--silent'].concat(deps));
+      });
+    }
+    if (bowerDeps.length) {
+      ndx.spawnSync('bower', ['uninstall', '--save', '--silent'].concat(bowerDeps), function() {
+        return ndx.spawnSync('bower', ['install', '--save', '--silent'].concat(bowerDeps));
+      });
+    }
   } else {
     console.log(chalk.yellow('ndx framework ') + chalk.cyan('v' + pack.version));
     console.log(chalk.cyan('type ') + chalk.yellow('help') + chalk.cyan(' for a list of commands'));
