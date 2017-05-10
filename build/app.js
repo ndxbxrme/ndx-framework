@@ -2,7 +2,7 @@
 
 'use strict';
 (function() {
-  var async, bowerDeps, chalk, cli, dep, deps, devDeps, getCommand, localBower, localNpm, main, ndx, options, pack, pad, path, readline;
+  var async, chalk, cli, getCommand, main, ndx, options, pack, pad, path, processCommand, readline;
 
   ndx = require('./ndx');
 
@@ -44,6 +44,11 @@
         return require('./controllers/revoke');
       case 'help':
         return require('./controllers/help');
+      case 'exit':
+      case 'quit':
+      case 'e':
+      case 'q':
+        return process.exit(0);
     }
   };
 
@@ -54,54 +59,65 @@
     return input;
   };
 
-  main = function() {
+  processCommand = function(keywords, i) {
+    var commandKeyword, j, keyword, len, questions;
+    questions = [];
+    if (i === 0) {
+      for (i = j = 0, len = keywords.length; j < len; i = ++j) {
+        keyword = keywords[i];
+        if (i > 0) {
+          commandKeyword = ndx.data.command.keywords[i - 1].replace('?', '');
+          questions.push({
+            name: commandKeyword,
+            prompt: "" + (chalk.green(commandKeyword)) + (chalk.yellow('>')) + " "
+          });
+          if (commandKeyword) {
+            ndx.data[commandKeyword] = keyword;
+          }
+        }
+      }
+    }
+    while (i < ndx.data.command.keywords.length + 1) {
+      commandKeyword = ndx.data.command.keywords[i - 1];
+      if (!/\?/.test(commandKeyword)) {
+        questions.push({
+          name: commandKeyword,
+          prompt: "" + (chalk.green(commandKeyword)) + (chalk.yellow('>')) + " "
+        });
+      }
+      i++;
+    }
+    return async.eachSeries(questions, ndx.getData, function() {
+      return ndx.data.command.exec(function(err, thing) {
+        if (err) {
+          console.log(err);
+        }
+        return ndx.data.command.cleanup(function(err) {
+          return main(thing);
+        });
+      });
+    });
+  };
+
+  main = function(command) {
+    if (command) {
+      ndx.data.command = getCommand(command);
+      return processCommand([], 1);
+    }
     switch (ndx.data.state) {
       case 'command':
         return ndx.getData({
           prompt: "" + (chalk.green('ndx')) + (chalk.yellow('>')) + " "
         }, function(err, input) {
-          var commandKeyword, i, j, keyword, keywords, len, questions;
+          var keywords;
           keywords = ndx.splitLine(input);
           if (keywords && keywords.length) {
-            questions = [];
             ndx.data.command = getCommand(keywords[0]);
             if (!ndx.data.command) {
               console.log('unexpected command');
               return main();
             }
-            for (i = j = 0, len = keywords.length; j < len; i = ++j) {
-              keyword = keywords[i];
-              if (i > 0) {
-                commandKeyword = ndx.data.command.keywords[i - 1].replace('?', '');
-                questions.push({
-                  name: commandKeyword,
-                  prompt: "" + (chalk.green(commandKeyword)) + (chalk.yellow('>')) + " "
-                });
-                if (commandKeyword) {
-                  ndx.data[commandKeyword] = keyword;
-                }
-              }
-            }
-            while (i < ndx.data.command.keywords.length + 1) {
-              commandKeyword = ndx.data.command.keywords[i - 1];
-              if (!/\?/.test(commandKeyword)) {
-                questions.push({
-                  name: commandKeyword,
-                  prompt: "" + (chalk.green(commandKeyword)) + (chalk.yellow('>')) + " "
-                });
-              }
-              i++;
-            }
-            return async.eachSeries(questions, ndx.getData, function() {
-              return ndx.data.command.exec(function(err, thing) {
-                if (err) {
-                  console.log(err);
-                }
-                return ndx.data.command.cleanup(function(err) {
-                  return main();
-                });
-              });
-            });
+            return processCommand(keywords, 0);
           }
         });
     }
@@ -116,49 +132,15 @@
       return console.log('done');
     });
   } else if (options['update-packages']) {
-    localNpm = require(path.join(process.cwd(), 'package.json'));
-    localBower = require(path.join(process.cwd(), 'bower.json'));
-    devDeps = [];
-    deps = [];
-    bowerDeps = [];
-    if (localNpm) {
-      for (dep in localNpm.devDependencies) {
-        if (dep.indexOf('ndx') !== -1) {
-          devDeps.push(dep);
-        }
-      }
-      for (dep in localNpm.dependencies) {
-        if (dep.indexOf('ndx') !== -1) {
-          deps.push(dep);
-        }
-      }
-    }
-    if (localBower) {
-      for (dep in localBower.Dependencies) {
-        if (dep.indexOf('ndx') !== -1) {
-          bowerDeps.push(dep);
-        }
-      }
-    }
-    if (devDeps.length) {
-      ndx.spawnSync('npm', ['uninstall', '--save-dev', '--silent'].concat(devDeps), function() {
-        return ndx.spawnSync('npm', ['install', '--save-dev', '--silent'].concat(devDeps));
-      });
-    }
-    if (deps.length) {
-      ndx.spawnSync('npm', ['uninstall', '--save', '--silent'].concat(deps), function() {
-        return ndx.spawnSync('npm', ['install', '--save', '--silent'].concat(deps));
-      });
-    }
-    if (bowerDeps.length) {
-      ndx.spawnSync('bower', ['uninstall', '--save', '--silent'].concat(bowerDeps), function() {
-        return ndx.spawnSync('bower', ['install', '--save', '--silent'].concat(bowerDeps));
-      });
-    }
+    require('./controllers/update-packages')(true, true);
+  } else if (options['update-npm']) {
+    require('./controllers/update-packages')(true, false);
+  } else if (options['update-bower']) {
+    require('./controllers/update-packages')(false, true);
   } else {
     console.log(chalk.yellow('ndx framework ') + chalk.cyan('v' + pack.version));
     console.log(chalk.cyan('type ') + chalk.yellow('help') + chalk.cyan(' for a list of commands'));
-    console.log(chalk.cyan('hit ') + chalk.yellow('Ctrl-C') + chalk.cyan(' to exit'));
+    console.log(chalk.cyan('hit ') + chalk.yellow('Ctrl-C') + chalk.cyan(' or type ') + chalk.yellow('exit') + chalk.cyan(' to exit'));
     main();
   }
 

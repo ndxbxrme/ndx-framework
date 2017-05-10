@@ -13,7 +13,7 @@
         if (!err) {
           console.log(chalk.green.bold("\nsuccessfully connected to " + ndx.data.host + "\n"));
         }
-        return typeof cb === "function" ? cb(err, token) : void 0;
+        return typeof cb === "function" ? cb(err, null) : void 0;
       });
     },
     cleanup: function(cb) {

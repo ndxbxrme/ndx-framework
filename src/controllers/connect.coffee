@@ -9,6 +9,6 @@ module.exports =
     ndx.getToken (err, token) ->
       if not err
         console.log chalk.green.bold "\nsuccessfully connected to #{ndx.data.host}\n"
-      cb? err, token
+      cb? err, null
   cleanup: (cb) ->
     cb? null

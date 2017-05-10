@@ -20,6 +20,7 @@
       console.log('token');
       console.log('revoke');
       console.log('memory');
+      console.log('exit');
       console.log('');
       return typeof cb === "function" ? cb(null) : void 0;
     },

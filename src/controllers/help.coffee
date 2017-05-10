@@ -17,6 +17,7 @@ module.exports =
     console.log 'token'
     console.log 'revoke'
     console.log 'memory'
+    console.log 'exit'
     console.log ''
     cb? null
   cleanup: (cb) ->
