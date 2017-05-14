@@ -2,7 +2,7 @@
 
 'use strict';
 (function() {
-  var async, chalk, cli, getCommand, main, ndx, options, pack, pad, path, processCommand, readline;
+  var async, backupCtrl, chalk, cli, connectCtrl, databaseCtrl, getCommand, helpCtrl, main, memoryCtrl, ndx, options, pack, pad, passwordCtrl, path, processCommand, readline, revokeCtrl, tokenCtrl;
 
   ndx = require('./ndx.js');
 
@@ -20,30 +20,46 @@
 
   pack = require('../package.json');
 
+  connectCtrl = require('./controllers/connect.js');
+
+  backupCtrl = require('./controllers/backup.js');
+
+  passwordCtrl = require('./controllers/password.js');
+
+  databaseCtrl = require('./controllers/database.js');
+
+  memoryCtrl = require('./controllers/memory.js');
+
+  tokenCtrl = require('./controllers/token.js');
+
+  revokeCtrl = require('./controllers/revoke.js');
+
+  helpCtrl = require('./controllers/help.js');
+
   getCommand = function(commandName) {
     switch (commandName) {
       case 'connect':
       case 'login':
-        return require('./controllers/connect');
+        return connectCtrl;
       case 'backup':
-        return require('./controllers/backup');
+        return backupCtrl;
       case 'password':
       case 'pass':
-        return require('./controllers/password');
+        return passwordCtrl;
       case 'database':
       case 'exec':
       case 'sql':
       case 'd':
-        return require('./controllers/database');
+        return databaseCtrl;
       case 'memory':
       case 'mem':
-        return require('./controllers/memory');
+        return memoryCtrl;
       case 'token':
-        return require('./controllers/token');
+        return tokenCtrl;
       case 'revoke':
-        return require('./controllers/revoke');
+        return revokeCtrl;
       case 'help':
-        return require('./controllers/help');
+        return helpCtrl;
       case 'exit':
       case 'quit':
       case 'e':

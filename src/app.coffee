@@ -8,25 +8,33 @@ path = require 'path'
 options = cli.parse()
 pack = require '../package.json'
 
+connectCtrl = require('./controllers/connect.js')
+backupCtrl = require('./controllers/backup.js')
+passwordCtrl = require('./controllers/password.js')
+databaseCtrl = require('./controllers/database.js')
+memoryCtrl = require('./controllers/memory.js')
+tokenCtrl = require('./controllers/token.js')
+revokeCtrl = require('./controllers/revoke.js')
+helpCtrl = require('./controllers/help.js')
   
 getCommand = (commandName) ->
   switch commandName
     when 'connect', 'login'
-      return require('./controllers/connect')
+      return connectCtrl
     when 'backup'
-      return require('./controllers/backup')
+      return backupCtrl
     when 'password', 'pass'
-      return require('./controllers/password')
+      return passwordCtrl
     when 'database', 'exec', 'sql', 'd'
-      return require('./controllers/database')
+      return databaseCtrl
     when 'memory', 'mem'
-      return require('./controllers/memory')
+      return memoryCtrl
     when 'token'
-      return require('./controllers/token')
+      return tokenCtrl
     when 'revoke'
-      return require('./controllers/revoke')
+      return revokeCtrl
     when 'help'
-      return require('./controllers/help')
+      return helpCtrl
     when 'exit', 'quit', 'e', 'q'
       return process.exit 0
 
