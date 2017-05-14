@@ -58,7 +58,7 @@
     }
     return read({
       prompt: args.prompt || '>>',
-      silent: /password/i.test(args.name)
+      silent: /^password/i.test(args.name)
     }, function(err, input) {
       if (args.name) {
         data[args.name] = input;

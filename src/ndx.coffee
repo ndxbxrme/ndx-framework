@@ -45,7 +45,7 @@ getData = (args, callback) ->
       return callback null, data[args.name]
   read
     prompt: args.prompt or '>>'
-    silent: /password/i.test(args.name)
+    silent: /^password/i.test(args.name)
   , (err, input) ->
     if args.name
       data[args.name] = input

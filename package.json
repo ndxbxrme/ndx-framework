@@ -1,13 +1,13 @@
 {
   "name": "ndx-framework",
-  "version": "0.2.21",
+  "version": "0.2.22",
   "description": "ndx-framework",
   "main": "build/app.js",
   "engines": {
     "node": ">=0.10.0"
   },
   "bin": {
-    "ndx-framework": "build/app"
+    "ndx-framework": "build/app.js"
   },
   "scripts": {
     "test": "node build/test/test.js"
