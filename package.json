@@ -1,6 +1,6 @@
 {
   "name": "ndx-framework",
-  "version": "0.2.23",
+  "version": "0.2.24",
   "description": "ndx-framework",
   "main": "build/app.js",
   "engines": {

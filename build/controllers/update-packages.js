@@ -4,7 +4,7 @@
 
   path = require('path');
 
-  ndx = require('../ndx');
+  ndx = require('../ndx.js');
 
   module.exports = function(npm, bower) {
     var bowerDeps, dep, deps, devDeps, localBower, localNpm;

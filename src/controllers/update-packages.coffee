@@ -1,6 +1,6 @@
 'use strict'
 path = require 'path'
-ndx = require '../ndx'
+ndx = require '../ndx.js'
 
 module.exports = (npm, bower) ->
   localNpm = null

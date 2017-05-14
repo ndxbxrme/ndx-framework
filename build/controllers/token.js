@@ -2,7 +2,7 @@
   'use strict';
   var ndx, superagent;
 
-  ndx = require('../ndx');
+  ndx = require('../ndx.js');
 
   superagent = require('superagent');
 

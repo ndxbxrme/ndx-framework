@@ -1,6 +1,6 @@
 'use strict'
 
-ndx = require '../ndx'
+ndx = require '../ndx.js'
 superagent = require 'superagent'
 
 module.exports = 

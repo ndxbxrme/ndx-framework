@@ -2,7 +2,7 @@
   'use strict';
   var chalk, ndx;
 
-  ndx = require('../ndx');
+  ndx = require('../ndx.js');
 
   chalk = require('chalk');
 

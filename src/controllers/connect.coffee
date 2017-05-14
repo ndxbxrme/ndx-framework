@@ -1,6 +1,6 @@
 'use strict'
 
-ndx = require '../ndx'
+ndx = require '../ndx.js'
 chalk = require 'chalk'
 
 module.exports =

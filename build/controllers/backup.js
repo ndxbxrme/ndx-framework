@@ -2,7 +2,7 @@
   'use strict';
   var chalk, getBackupList, inquirer, ndx, superagent;
 
-  ndx = require('../ndx');
+  ndx = require('../ndx.js');
 
   superagent = require('superagent');
 

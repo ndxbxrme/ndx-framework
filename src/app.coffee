@@ -1,6 +1,5 @@
 
-module.paths.push '/usr/local/lib/node_modules'
-ndx = require './ndx'
+ndx = require './ndx.js'
 readline = require 'readline'
 chalk = require 'chalk'
 async = require 'async'

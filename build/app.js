@@ -4,9 +4,7 @@
 (function() {
   var async, chalk, cli, getCommand, main, ndx, options, pack, pad, path, processCommand, readline;
 
-  module.paths.push('/usr/local/lib/node_modules');
-
-  ndx = require('./ndx');
+  ndx = require('./ndx.js');
 
   readline = require('readline');
 
