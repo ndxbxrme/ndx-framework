@@ -21,7 +21,7 @@
     login
     .body(ng-show='auth.getUser()')
       .logout
-        a(href='/api/logout', target='_self) Log out
+        a(href='/api/logout', target='_self') Log out
       .view(ui-view='')
 ```
 

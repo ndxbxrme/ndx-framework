@@ -100,6 +100,7 @@ set the `SSL_PORT=[portNo]` environment variable and drop `key.pem` and `cert.pe
 ### modules
 <a name="modules"></a>
 ndx-framework is built around modularity.  
+all npm installed ndx modules and all user modules in `/startup`, `/services` and `/controllers` get loaded automatically
 server modules are simply a function that receives the `ndx` object and adds functionality to it  
 `src/server/app.coffee`
 ```coffeescript
@@ -112,14 +113,6 @@ require 'ndx-server'
 .start()
 ```
 as your app grows you'll find it easier to keep the code for your modules seperate  
-`src/server/app.coffee`
-```coffeescript
-require 'ndx-server'
-.config
-  database: 'db'
-.controller require './controllers/first'
-.start()
-```
 `src/server/controllers/first.coffee`
 ```coffeescript
 module.exports (ndx) ->
@@ -211,12 +204,12 @@ other modules can add extra properties and methods to the `ndx` object, eg `ndx-
 
 ### api routes and users
 all routes that start with `api/` get the currently logged in user as `ndx.user`, eg  
+`npm install --save ndx-passport`  
 `src/server/app.coffee`
 ```coffeescript
 require 'ndx-server'
 .config
   database: 'db'
-.use 'ndx-passport'
 .controller (ndx) ->
   ndx.app.get 'api/test', (req, res, next) ->
     if ndx.user
@@ -227,7 +220,7 @@ require 'ndx-server'
 ```  
 `ndx-user` can not be relied upon in async situations  
 we recommend that you wrap it in a closure before going async, eg  
-```
+```coffeescript
 ndx.app.get 'api/async', (req, res) ->
   ((user) ->
     asyncFunction ->
@@ -235,25 +228,24 @@ ndx.app.get 'api/async', (req, res) ->
   )(ndx.user)
 ### authenticating api routes
 without roles  
+`npm install --save ndx-passport`  
 `src/server/app.coffee`
 ```coffeescript
 require 'ndx-server'
 .config
   database: 'db'
-.use 'ndx-passport'
 .controller (ndx) ->
   ndx.app.get 'api/protected', ndx.authenticate(), (req, res, next) ->
     res.end 'you\'re cool'
 .start()
 ```
 with roles, using [ndx-user-roles](https://github.com/ndxbxrme/ndx-user-roles)  
+`npm install --save ndx-passport ndx-user-roles`   
 `src/server/app.coffee`
 ```coffeescript
 require 'ndx-server'
 .config
   database: 'db'
-.use 'ndx-passport'
-.use 'ndx-user-roles'
 .controller (ndx) ->
   ndx.app.get 'api/protected', ndx.authenticate(['admin', 'superadmin']), (req, res, next) ->
     res.end 'you\'re cool'
@@ -261,19 +253,8 @@ require 'ndx-server'
 ```
 
 ### connect to the app
-add these modules to  
-`src/server/app.coffee`
-```coffeescript
-require 'ndx-server'
-.config
-  database: 'db'
-.use 'ndx-cors'
-.use 'ndx-user-roles'
-.use 'ndx-auth'
-.use 'ndx-superadmin'
-.use 'ndx-connect'
-.start()
-```
+add these modules
+`npm install --save ndx-cors ndx-user-roles ndx-auth ndx-superadmin ndx-connect`  
 then type `ndx-framework` to open the interactive app connector  
 ```bash
 > ndx-framework
@@ -295,18 +276,7 @@ Sun Jan 29 2017 02:38:00 PM
 ```
 ### app monitor
 you can use [ndx-appmonitor](https://github.com/ndxbxrme/ndx-appmonitor) to monitor the status of your app in realtime  
-`src/server/app.coffee`
-```coffeescript
-require 'ndx-server'
-.config
-  database: 'db'
-.use 'ndx-cors'
-.use 'ndx-profiler'
-.use 'ndx-user-roles'
-.use 'ndx-auth'
-.use 'ndx-superadmin'
-.start()
-```
+`npm install --save ndx-cors ndx-profiler ndx-user-roles ndx-auth ndx-superadmin`  
 to monitor local apps git clone [ndx-appmonitor](https://github.com/ndxbxrme/ndx-appmonitor) then run it with grunt  
 for live apps you can use [this pen](http://codepen.io/ndxbxrme/full/evNyGV/)
 
