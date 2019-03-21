@@ -38,6 +38,7 @@
         }
         authCode = new Buffer(data.username + ":" + data.password).toString('base64');
         return superagent.post(data.host + "/auth/token").set('Authorization', 'Basic ' + authCode).send().end(function(err, response) {
+          console.log(err, response);
           if (!err) {
             accessToken = response.body.accessToken;
           }

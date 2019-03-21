@@ -3,6 +3,7 @@ path = require 'path'
 ndx = require '../ndx.js'
 
 module.exports = (npm, bower) ->
+  console.log 'hi'
   localNpm = null
   try
     localNpm = require path.join process.cwd(), 'package.json'
@@ -19,6 +20,7 @@ module.exports = (npm, bower) ->
     for dep of localNpm.dependencies
       if dep.indexOf('ndx') isnt -1
         deps.push dep
+  console.log localBower
   if localBower and bower
     for dep of localBower.dependencies
       if dep.indexOf('ndx') isnt -1
@@ -31,4 +33,5 @@ module.exports = (npm, bower) ->
       ndx.spawnSync 'npm', ['install', '--save', '--silent'].concat(deps)
   if bowerDeps.length
     ndx.spawnSync 'bower', ['uninstall', '--save', '--silent'].concat(bowerDeps), ->
+      console.log 'bower uninstalled'
       ndx.spawnSync 'bower', ['install', '--save', '--silent'].concat(bowerDeps)

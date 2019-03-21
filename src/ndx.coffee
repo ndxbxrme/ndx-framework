@@ -32,6 +32,7 @@ getToken = (cb) ->
       .set 'Authorization', 'Basic ' + authCode
       .send()
       .end (err, response) ->
+        console.log err, response
         if not err
           accessToken = response.body.accessToken 
         cb (if accessToken then null else 'bad login'), accessToken

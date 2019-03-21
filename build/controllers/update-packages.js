@@ -8,6 +8,7 @@
 
   module.exports = function(npm, bower) {
     var bowerDeps, dep, deps, devDeps, localBower, localNpm;
+    console.log('hi');
     localNpm = null;
     try {
       localNpm = require(path.join(process.cwd(), 'package.json'));
@@ -31,6 +32,7 @@
         }
       }
     }
+    console.log(localBower);
     if (localBower && bower) {
       for (dep in localBower.dependencies) {
         if (dep.indexOf('ndx') !== -1) {
@@ -50,6 +52,7 @@
     }
     if (bowerDeps.length) {
       return ndx.spawnSync('bower', ['uninstall', '--save', '--silent'].concat(bowerDeps), function() {
+        console.log('bower uninstalled');
         return ndx.spawnSync('bower', ['install', '--save', '--silent'].concat(bowerDeps));
       });
     }
